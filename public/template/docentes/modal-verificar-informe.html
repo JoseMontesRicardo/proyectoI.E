@@ -1,0 +1,43 @@
+<div id="modal-verificar-informe" class="modal modal-fixed-footer">
+	<div class="modal-content">
+		<div class="row">
+			<h5 id="{{ ti }}" class="col s9">Reporte académico de: {{ modalNombre+' '+modalApellido}}</h5>
+			<select ng-model="$parent.selectPeriodo" ng-change="cargarLogros()" class="col s2 browser-default tooltipped" ng-tooltip data-position="right" data-delay="50" data-tooltip="seleccione el periodo" name="" id="">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+		</div>
+		<div>
+			<table class="col s12 striped">
+		        <thead>
+		          <tr>
+		              <th data-field="">Logro</th>
+		              <th data-field="">Nota</th>
+		              <th data-field="">Observacion</th>
+		              <th data-field="">Calificar</th>
+		          </tr>
+		        </thead>
+
+		        <tbody>
+		          <tr id="{{ logro.idlogro }}" ng-repeat=" logro in listaLogros ">
+		            <td>{{ logro.nombre }}</td>
+		            <td>
+		            	<input tipo-input="nota" type="number" value="{{logro.nota}}">
+		            </td>
+		            <td>
+		            	<input tipo-input="observacion" type="text" value="{{logro.observacion}}">
+		            </td>
+		            <td>
+		            	<a class="btn-floating btn-small waves-effect waves-light red" ng-click="calificar(ti,selectPeriodo,logro.idlogro)"><i class="material-icons">add</i></a>
+		            </td>
+		          </tr>
+		        </tbody>
+	      </table>
+		</div>
+	</div>
+	<div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Calificar</a>
+    </div>
+</div>

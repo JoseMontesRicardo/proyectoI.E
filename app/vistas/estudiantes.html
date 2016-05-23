@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/materialize.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<nav>
+   		 <div class="nav-wrapper teal">
+     		<a href="#" class="brand-logo">Logo</a>
+     		<ul id="nav-mobile" class="right hide-on-med-and-down">
+    			<li><a href="sass.html">Saas</i></a></li>
+    			<li><a href="badges.html">Components</a></li>
+    			<li><a href="/formulario">CARLOS PEREZ</a></li> 
+        	</ul>
+ 		</div>
+ 	</nav>
+
+
+	<div class="contenedor-principal row">
+		<div class="barra-lateral col s2">
+			<figure class="contenedor-escudo">
+				<img class="contenedor-escudo__logotipo" src="img/escudo.jpg" alt="">
+			</figure>
+  				
+			<a href="/estudiantes"class="opciones col s11 waves-effect waves-light btn"><i class="material-icons color right">child_care</i>Estudiantes</a>
+			<a href= "/docentes"class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">group</i>Usuarios</a>
+			<a href="/asignaturas" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons right">class</i>Asignaturas</a>
+			<a href="/ horarios" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">bookmark</i>Grados</a>
+			<a href="/mensajes" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">today</i>Horario</a>
+			<a href="/mensajes" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">message</i>Mensajes</a>
+
+		</div>
+	</div>
+{% block body %}
+	
+		
+
+
+<div class="contenido col s10">
+	<div>
+		<i class="iconos material-icons color4 large">wc</i>
+		<a class="waves-effect waves-light btn-large">ACUDIENTES</a>
+	</div>
+
+	<div>
+		<i class="iconos material-icons color4 large">school</i>
+		<a class="waves-effect waves-light btn-large">DOCENTES</a>
+	</div>
+</div>
+
+	
+{% endblock %}

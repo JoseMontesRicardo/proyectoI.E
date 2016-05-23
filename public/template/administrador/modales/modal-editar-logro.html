@@ -1,0 +1,56 @@
+<div class="modal" id="modal-editar-logro">
+	<div class="modal-content">
+		<div class="row">
+			<h5 class="teal-text">Consultar Logro</h5>
+			<input type="text" class="col s3 left" ng-model="$parent.editarLogroBuscar" placeholder="Buscar">
+			<a class="btn-floating btn teal" ng-click="buscarLogro()"><i class="large material-icons center">search</i></a>			
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix ">local_offer</i>
+					<input ng-model="$parent.editarLogroCodigo" type="text" class="validate">
+				<label class="editarLogrolabel">Codigo logro</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">description</i>
+					<input ng-model="$parent.editarLogroNombre" type="text" class="validate">
+				<label class="editarLogrolabel">Nombre</label>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix left color5">today</i>
+				<select name="" ng-model="$parent.editarLogroPeriodo" class="col s10 right browser-default">
+					<option value="" disabled selected>PERÍODO</option>
+					<option class="teal-text" value="1">Período 1</option>
+					<option class="teal-text" value="2">Período 2</option>
+					<option class="teal-text" value="3">Período 3</option>
+					<option class="teal-text" value="4">Período 4</option>
+				</select>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix left color5">class</i>
+				<select  ng-model="$parent.editarLogroAsignatura" class="browser-default col s10 right" material-select watch>
+				<option id="asignatura-default" value="">seleccione la asignatura</option>
+				<option value="{{ item.idasignatura }}" ng-repeat="item in $parent.listaAsignaturas ">{{ item.nombre }}</option>
+			</select>
+			</div>
+			
+		</div>	
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix left color5">school</i>
+				<select ng-model="$parent.editarLogroGrado" class="browser-default col s10 right" material-select watch>
+					<option id="grado-default" value="">seleccione el grado</option>
+					<option value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
+				</select>
+			</div>
+		</div>
+		<div class="modal-footer">
+				<a class="btn waves-effect waves-default">Modificar</a>
+		</div>
+	</div>	
+</div>	
+<script>
+	$('select').material_select();
+</script>

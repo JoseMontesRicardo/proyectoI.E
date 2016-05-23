@@ -1,0 +1,85 @@
+<div class="modal" id="modal-agregar-horario">
+	<div class="modal-content">
+		<h4 class="teal-text">Nuevo Horario de clases</h4>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix ">local_offer</i>
+					<input ng-model="$parent.registrarHorarioCodigo" type="text" class="validate">
+				<label for="icon_prefix">Codigo logro</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix left color5">access_time</i>
+				<select name="" ng-model="$parent.registrarHorarioJornada" class="col s10 right browser-default">
+					<option value="" disabled selected>Jornada</option>
+					<option class="teal-text" value="Mañana">Mañana</option>
+					<option class="teal-text" value="Tarde">Tarde</option>
+				</select>
+			</div>			
+		</div>
+		<div class="row">
+			<div class="col s6">
+				<i class="material-icons prefix left color5">wb_sunny</i>
+				<select name="" ng-model="$parent.registrarHorarioDia" class="col s10 right browser-default">
+					<option value="" disabled selected>Día</option>
+					<option class="teal-text" value="Lunes">Lunes</option>
+					<option class="teal-text" value="Martes">Martes</option>
+					<option class="teal-text" value="Miercoles">Miércoles</option>
+					<option class="teal-text" value="Jueves">Jueves</option>
+					<option class="teal-text" value="Viernes">Viernes</option>
+				</select>
+			</div>
+			<div class="col s6">
+				<i class="material-icons prefix left color5">watch</i>
+				<select name="" ng-model="$parent.registrarHorarioHora" class="col s10 right browser-default">
+					<option value="" disabled selected>Hora</option>
+					<option class="teal-text" value="6:30am-7:30am">6:30am-7:30am</option>
+					<option class="teal-text" value="7:30am-8:00am">7:30am-8:00am</option>
+					<option class="teal-text" value="8:00am-9:00am">8:00am-9:00am</option>
+					<option class="teal-text" value="9:30am-10:30am">9:30am-10:30am</option>
+					<option class="teal-text" value="10:30am-11:30am">10:30am-11:30am</option>
+					<option class="teal-text" value="11:30am-12:30pm">11:30am-12:30pm</option>
+				</select>
+			</div>					
+		</div>
+		<div class="row">
+			<div class="col s6">
+				<i class="material-icons color5 prefix left">school</i>
+				<select ng-model="$parent.registrarHorarioGrado" class="browser-default col s10 right tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="Seleccione el grado!">
+					<option id="grado-default" value="">Seleccione el grado</option>
+					<option class="teal-text" value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
+				</select>
+			</div>
+			<div class="col s6">
+				<i class="material-icons prefix color5 left">class</i>
+				<select ng-model="$parent.registrarHorarioAsignatura" class="browser-default col s10 right tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="Seleccione la asignatura ">
+					<option id="asignatura-default" value="">Seleccione la asignatura</option>
+					<option class="teal-text" value="{{ item.idasignatura }}" ng-repeat="item in $parent.listaAsignaturas">{{ item.nombre }}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s6">
+				<i class="material-icons prefix color5 left">group</i>
+				<select ng-model="$parent.registrarHorarioGrupo" class="browser-default col s10 right tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="Seleccione el grupo!">
+					<option id="grupo-default" value="">Seleccione el grupo</option>
+					<option class="teal-text" value="{{ item.idgrupo }}" ng-repeat="item in $parent.listaGrupos ">{{ item.idgrupo }}</option>
+				</select>
+			</div>
+			<div class=" input-field col s6">
+				<i class="material-icons prefix">assignment_ind</i>
+				<input ng-model="$parent.registrarHorarioDocente" type="number" class="validate" data-position="top" data-delay="10" data-tooltip="Docente que la imparte">
+				<label>Cedula docente</label>	
+			</div>			
+		</div>
+
+		</div>
+
+		
+		<div class="modal-footer">
+			<a class="btn waves-effect waves-default" ng-click="nuevoHorario()">Registrar</a>
+		</div>
+	</div>
+</div>		
+<script>
+	$('select').material_select();
+</script>

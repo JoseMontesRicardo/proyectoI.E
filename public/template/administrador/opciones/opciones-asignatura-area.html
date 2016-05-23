@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs col s12">
+      <li class="tab col s3 pestanas"><a href="#areas" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Opciones para las áreas">Áreas</a></li>
+      <li class="tab col s3 pestanas"><a href="#asignaturas" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Opciones para las asignaturas">Asignaturas</a></li>
+    </ul>
+  </div>
+  <!-- aqui van las opciones para las áreas -->
+  <div id="areas" class="col s10">
+    <div class=" waves-effect waves-light opciones1">
+      <i class=" waves-effect waves-light material-icons color2 large" ng-click="mostrarModalAgregarArea()">collections_bookmark</i>
+      <p class="teal-text">Agregar área</p>
+    </div>
+    <div class=" waves-effect waves-light opciones1">
+      <i class=" waves-effect waves-light material-icons color2 large" ng-click="mostrarModalEditarArea()">collections_bookmark</i>
+      <i class="material-icons color2 small">search</i>
+      <p class="teal-text">Consultar área</p>
+    </div>
+  </div>
+  <!-- aqui van las opciones para las áreas -->
+
+
+  <!-- aqui van las opciones para las asignaturas -->
+  <div id="asignaturas" class="col s10">
+      <div class="row">
+          <div class=" waves-effect waves-light opciones1"  ng-click="mostrarModalAgregarAsignatura()">
+            <i class="material-icons color2 large">class</i>
+            <p class="teal-text">Agregar asignatura</p>
+          </div>
+          <div class=" waves-effect waves-light opciones1" ng-click="mostrarModalEditarAsignatura()">
+            <i class="material-icons color2 large" >class</i>
+            <i class="material-icons color2 small medium">search</i>
+            <p class="teal-text">Consultar asignatura</p>
+          </div>
+          <div class=" waves-effect waves-light opciones1" ng-click="mostrarModalPlanAcademico()">
+            <i class="material-icons color2 large" >class</i>
+            <i class="material-icons color3 medium">school</i>
+            <p class="teal-text">Asignar Plan Académico</p>
+          </div>
+          
+      </div>
+      <div class="row">
+          <div class=" waves-effect waves-light" ng-click="mostrarModalCargaAcademica()">
+            <i class="material-icons color2 large" >person</i>
+            <i class="material-icons color3 medium">business_center</i>
+            <p class="teal-text">Asignar Carga</p>
+          </div>
+      </div>
+  </div>
+  <!-- aqui van las opciones para las asignaturas -->
+  
+
+
+</div>
+<script type="text/javascript">
+$('ul.tabs').tabs();
+$('.tooltipped').tooltip({delay: 50});
+</script>

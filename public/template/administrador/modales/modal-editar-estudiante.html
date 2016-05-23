@@ -1,0 +1,83 @@
+<div class="modal" id="modal-editar-estudiante">
+	<div class="modal-content">
+		<div class="row">
+			<h4 class="teal-text col s6">Editar Estudiante</h4>
+			<div class="col s6">
+				<input type="text" class="col s4 right" ng-model="$parent.editarEstudianteBuscar" placeholder="Buscar">
+				<a class="btn-floating right btn teal" ng-click="buscarEstudiante()">
+					<i class="large material-icons">search</i>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+				<input ng-model="$parent.editarEstudianteNombre1" type="text" class="validate">
+				<label class="editarEstudiantelabel">Primer Nombre</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+				<input ng-model="$parent.editarEstudianteNombre2" type="text" class="validate">
+				<label class="editarEstudiantelabel">segundo Nombre</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+				<input ng-model="$parent.editarEstudianteApellido1" id="icon_prefix" type="text" class="validate">
+				<label class="editarEstudiantelabel">primer apellido</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.editarEstudianteApellido2" type="text" class="validate">
+				<label class="editarEstudiantelabel">segundo apellido</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">insert_invitation</i>
+				<input ng-model="$parent.editarEstudianteNacimiento" type="date">
+			</div>
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">wc</i>
+				<select ng-model="$parent.editarEstudianteSexo" class="col s10 right browser-default"  material-select watch>
+					<option value="" disabled selected>SEXO</option>
+					<option id="masculino" value="M">M</option>
+					<option id="femenino" value="F">F</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">place</i>
+					<input ng-model="$parent.editarEstudianteDireccion" type="text" class="validate">
+				<label class="editarEstudiantelabel">direccion</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">assignment_ind</i>
+				<input ng-model="$parent.editarEstudianteCedula" type="number" class="validate">
+				<label class="editarEstudiantelabel">cedula padre</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">face</i>
+				<input ng-model="$parent.editarEstudianteTi" type="number" class="validate">
+				<label class="editarEstudiantelabel">tarjeta identidad</label>
+			</div>
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">school</i>
+				<select id="editar-estudiante-grado" ng-model="$parent.editarEstudianteGrado" class="browser-default col s10 right" material-select watch>
+					<option id="grado-default-editar-estudiante" value="">seleccion el grado</option>
+					<option id="{{ item.idgrado }}" value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
+				</select>
+			</div>
+		</div>		
+	</div>
+	<div class="modal-footer">
+		<a class="btn waves-effect waves-default" ng-click="editarEstudiante()">MODIFICAR</a>
+	</div>	
+</div>

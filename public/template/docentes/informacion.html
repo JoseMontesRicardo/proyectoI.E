@@ -1,0 +1,24 @@
+<div class="contenedor-principal1"> 
+ 	<div ng-repeat=" info in listaInfo">
+      <div class="card small col s7">
+      <div class="card-image waves-effect waves-block waves-light">    
+           <img class="activator contenedor-escudo__logotipo" src="img/docente.jpg">
+         
+      </div>
+      <div class="card-content">
+         <span class="card-title activator teal-text text-darken-1">{{ info.nombre1}} {{ info.nombre2}} {{ info.apellido1}} {{ info.apellido2}}<i class="material-icons right">more_vert</i>
+         </span>
+            <p><h5 class="teal-text text-darken-1">Usuario: {{ info.cedula }}</h5></p>
+      </div>
+
+      <div class="card-reveal">
+         <span class="card-title teal-text ">Datos Personales<i class="material-icons right">close</i>
+         </span>
+         <p> <h6 class="teal-text text-darken-4">Sexo: {{ info.sexo }} </h6></br> 
+         <h6 class="teal-text text-darken-4">Dirección: {{ info.direccion}} </h6></br> 
+         <h6 class="teal-text text-darken-4">Telefono: {{ info.telefono}}</h6></p></br>
+         <h6 class="teal-text text-darken-4">Email: {{ info.email}}</h6></p>
+
+      </div>
+    </div>  
+  </div>

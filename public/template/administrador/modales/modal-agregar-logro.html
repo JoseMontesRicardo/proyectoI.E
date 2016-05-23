@@ -1,0 +1,52 @@
+<div class="modal" ng-init="cargarAsignaturas()" id="modal-agregar-logro">
+	<div class="modal-content">
+		<h4 class="teal-text">Nuevo Logro</h4>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix ">local_offer</i>
+					<input ng-model="$parent.registrarLogroCodigo" type="text" class="validate">
+				<label for="icon_prefix">Codigo logro</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">description</i>
+					<input ng-model="$parent.registrarLogroNombre" type="text" class="validate">
+				<label for="icon_prefix">Nombre</label>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix left color5">today</i>
+				<select name="" ng-model="$parent.registrarLogroPeriodo" class="col s10 right browser-default">
+					<option value="" disabled selected>PERÍODO</option>
+					<option class="teal-text" value="1">Período 1</option>
+					<option class="teal-text" value="2">Período 2</option>
+					<option class="teal-text" value="3">Período 3</option>
+					<option class="teal-text" value="4">Período 4</option>
+				</select>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix left color5">class</i>
+				<select  ng-model="$parent.registrarLogroAsignatura" class="browser-default col s10 right" material-select watch>
+				<option id="asignatura-default" value="">seleccione la asignatura</option>
+				<option value="{{ item.idasignatura }}" ng-repeat="item in $parent.listaAsignaturas ">{{ item.nombre }}</option>
+			</select>
+			</div>
+			
+		</div>	
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix left color5">school</i>
+				<select ng-model="$parent.registrarLogroGrado" class="browser-default col s10 right" material-select watch>
+					<option id="grado-default" value="">seleccione el grado</option>
+					<option value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
+				</select>
+			</div>
+		</div>
+		<div class="modal-footer">
+				<a class="btn waves-effect waves-default" ng-click="nuevoLogro()">Registrar</a>
+		</div>
+	</div>	
+</div>	
+<script>
+	$('select').material_select();
+</script>

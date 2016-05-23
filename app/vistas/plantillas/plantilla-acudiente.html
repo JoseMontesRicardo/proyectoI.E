@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="acudienteApp">
+<head>
+	<meta charset="UTF-8">
+	<title>PABLO VI</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/materialize.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="icon" type="image/png" href="/img/escudo.png" />
+	
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+</head>
+<body ng-controller="controladorAcudientes" ng-init="cargarGradosGrupos(); cargarNotificaciones();">
+	<nav>
+		<div class="nav-wrapper pink darken-2">
+				<img class="logo" src="img/logo.png" alt="">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li>
+					<div class="anclaje-mensaje__contenedor">{{ notificaciones.length }}</div>
+					<a class="dropdown-button" href="" data-activates="notificaciones">
+						<i class="material-icons">mail</i>
+					</a>
+					<ul id='notificaciones' class="dropdown-content">
+						<li cedula="{{ noti.cedula }}" ng-repeat="noti in notificaciones" ng-click="mostrarVentana(noti.nombre1,noti.cedula)"><a class="teal-text"><i class="material-icons prueba">mail</i>{{ noti.nombre1+' '+noti.apellido1 }}</a></li>
+					</ul>
+				</li>
+				
+				<li><a class="dropdown-button" href='#' data-activates="lista-hijos"><i class="material-icons">child_care</i></a></li>
+				<ul id='lista-hijos' class="dropdown-content">
+					{% for obj in objsesion.hijos %}
+						<li id="[[ obj.ti ]]"><a class="teal-text" href="" ng-click="cargarHorario([[obj.ti]])"><i class="material-icons prueba">person</i>[[obj.nombre1+' '+obj.nombre2]]</a></li>
+					{% endfor %}
+				</ul>	
+				<li><a class="dropdown-button" href='#' data-activates="dropdown"><i class="material-icons">more_vert</i></a></li>
+				<ul id='dropdown' class="dropdown-content">
+					<li><a class="teal-text" href="#!"><i class="material-icons prueba">person</i>Mi perfil</a></li>
+					<li><a class="teal-text" href="#!"><i class="material-icons prueba">settings</i>Cambiar contraseña</a></li>
+					<li><a class="teal-text" href="/loggOut"><i class="material-icons prueba">power_settings_new</i>Salir</a></li>
+				</ul>	
+				<li><a href="">[[objsesion.nombre]] [[ objsesion.apellido ]]</a></li>
+			</ul>
+			<div class="right">
+				<ul class="side-nav fixed" id="mobile-demo">
+						<figure class="contenedor-escudo">
+							<img class="contenedor-escudo__logotipo" src="img/escudo.png" alt="">
+						</figure>
+						<li><a class="waves-effect waves-teal" href="#/hijos">Hijos</a></li>
+						<li><a class="waves-effect waves-teal" href="#/asignaturas">Asignaturas</a></li>
+						<li><a class="waves-effect waves-teal" href="#/docentes">Docentes</a></li>
+						<li><a class="waves-effect waves-teal" href="#/horario">Horario</a></li>
+						
+					</ul>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	{% block banner %}
+	{% endblock %}
+
+<script src="js/vendor/jquery.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script src="js/vendor/angular.js" ></script>
+<script src="js/vendor/materialize.min.js"></script>
+<script src="js/vendor/angular-materialize.js" ></script>
+<script src="js/vendor/angular-route.js" ></script>
+<script src="js/vendor/underscore.js" ></script>
+{% block scripts %}
+{% endblock %} 
+
+</body>
+</html>

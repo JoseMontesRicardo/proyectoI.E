@@ -1,0 +1,87 @@
+<div class="modal" id="modal-agregar-estudiante">
+	<div class="modal-content">
+		<h4 class="teal-text">Nuevo Estudiante</h4>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.registrarEstudianteNombre1" type="text" class="validate">
+				<label for="icon_prefix">Primer Nombre</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.registrarEstudianteNombre2" type="text" class="validate">
+				<label for="icon_prefix">segundo Nombre</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.registrarEstudianteApellido1" type="text" class="validate">
+				<label for="icon_prefix">primer apellido</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.registrarEstudianteApellido2" type="text" class="validate">
+				<label for="icon_prefix">segundo apellido</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">insert_invitation</i>
+				<input ng-model="$parent.registrarEstudianteNacimiento" id="icon_prefix" type="date">
+			</div>
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">wc</i>
+				<select name="" ng-model="$parent.registrarEstudianteSexo" class="col s10 right browser-default">
+					<option value="" disabled selected>SEXO</option>
+					<option value="M">M</option>
+					<option value="F">F</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">place</i>
+				<input ng-model="$parent.registrarEstudianteDireccion" id="icon_telephone" type="text" class="validate">
+				<label>direccion</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">assignment_ind</i>
+				<input ng-model="$parent.registrarEstudianteCedula" id="icon_telephone" type="number" class="validate">
+				<label>cedula padre</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">school</i>
+				<select ng-model="$parent.registrarEstudianteGrupo" class="browser-default col s10 right" material-select watch>
+					<option id="grupo-default" value="">seleccion el grupo</option>
+					<option value="{{ item.idgrupo }}" ng-repeat="item in $parent.listaGrupos ">{{ item.idgrupo }}</option>
+				</select>
+			</div>
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">school</i>
+				<select ng-model="$parent.registrarEstudianteGrado" class="browser-default col s10 right" material-select watch>
+					<option id="grado-default" value="">seleccion el grado</option>
+					<option value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">face</i>
+				<input ng-model="$parent.registrarEstudianteTi" id="ti" type="number" class="validate">
+				<label for="ti">tarjeta identidad</label>
+			</div>
+		</div>		
+	</div>
+	<div class="modal-footer">
+		<a class="btn waves-effect waves-default" ng-click="nuevoEstudiante()">Registrar</a>
+	</div>	
+</div>	
+<script>
+	$('select').material_select();
+</script>

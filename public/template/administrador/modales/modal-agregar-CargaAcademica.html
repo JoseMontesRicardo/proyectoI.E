@@ -1,0 +1,29 @@
+<div class="modal" id="modal-agregar-CargaAcademica">
+	<div class="modal-content">
+		<h4 class="teal-text">Registrar Carga acádemica</h4>		
+	</div>
+	<div class="container row">
+		<select ng-model="$parent.asignaturas" class="browser-default col s6 tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="Seleccione la asignatura ">
+			<option id="asignatura-default" value="">seleccione la asignatura</option>
+			<option value="{{ item.idasignatura }}" ng-repeat="item in $parent.listaAsignaturas">{{ item.nombre }}</option>
+		</select>
+	</div>
+	<div class="container row">
+		<div class="input-field col s6">
+				<i class="material-icons prefix">assignment_ind</i>
+				<input ng-model="$parent.docentes" type="number" class="validate tooltipped" data-position="top" data-delay="10" data-tooltip="Docente que la imparte">
+				<label>Cedula docente</label>
+	</div>
+	</div>
+	
+	<div class="modal-footer">
+		<div class="container">
+			<a class="btn waves-effect waves-default col s5" ng-click="nuevaCargaAcademica()" >Registrar</a>
+		</div>
+	</div>	
+</div>	
+<script>
+	$('select').material_select();
+	$('.tooltipped').tooltip();
+</script>
+<!-- <script src="js/vendor/angular-materialize.js"></script> -->

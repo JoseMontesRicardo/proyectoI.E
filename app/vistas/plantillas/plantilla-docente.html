@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="docenteApp" >
+	<head>
+		<meta charset="UTF-8">
+		<title>PABLO VI</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/materialize.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="icon" type="image/png" href="/img/escudo.png" />
+
+	</head>
+	<body ng-controller="docenteController" ng-init="cargarNotificaciones()">
+
+	<nav>
+		<div class="nav-wrapper teal lighten-1 ">
+				<img class="logo" src="img/logo.png" alt="">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li class="caja-notificaciones">
+					<div class="anclaje-mensaje__contenedor">{{ notificaciones.length }}</div>
+					<a class="dropdown-button" href="" data-activates="notificaciones">
+						<i class="material-icons">mail</i>
+					</a>
+					<ul id='notificaciones' class="dropdown-content">
+						<li cedula="{{ noti.cedula }}" ng-repeat="noti in notificaciones" ng-click="mostrarVentana(noti.nombre1,noti.cedula)"><a class="teal-text"><i class="material-icons prueba">mail</i>{{ noti.nombre1+' '+noti.apellido1 }}</a></li>
+					</ul>
+				</li>
+				<li><a class="dropdown-button" href='#' data-activates="dropdown"><i class="material-icons">more_vert</i></a></li>
+				<ul id='dropdown' class="dropdown-content">
+					<li><a class="teal-text" href="#!"><i class="material-icons prueba">person</i>Mi perfil</a></li>
+					<li><a class="teal-text" href="#!"><i class="material-icons prueba">settings</i>Cambiar contraseña</a></li>
+					<li><a class="teal-text" href="/loggOut"><i class="material-icons prueba">power_settings_new</i>Salir</a></li>
+				</ul>
+				<li><a href="">[[objsesion.nombre]] [[ objsesion.apellido ]]</a></li>
+
+			</ul>
+			<div class="">
+				<ul class="side-nav fixed" id="mobile-demo">
+						<figure class="contenedor-escudo">
+							<img class="contenedor-escudo__logotipo" src="img/escudo.png" alt="">
+						</figure>
+						<li><a class="waves-effect waves-light"  ng-click="cargarDatosDocente()" href="#/informacion">Información</a></li>
+
+						<li><a class="waves-effect waves-light" ng-click="mostrarCargas()" href="#/cargas" >Cargas</a></li>
+						<li><a class="waves-effect waves-light" ng-click="cargarHorarioDocente()" href="#/horario">Horario</a></li>
+					</ul>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	{% block contenido %}
+	{% endblock %}
+
+
+		<script src="js/vendor/jquery.js"></script>
+		<script src="socket.io/socket.io.js"></script>
+		<script src="js/vendor/angular.js" ></script>
+		<script src="js/vendor/materialize.min.js"></script>
+		<script src="js/vendor/angular-materialize.js" ></script>
+		<script src="js/vendor/angular-route.js" ></script>
+		<script src="js/main.js"></script> 
+		<script src="js/vendor/underscore.js" ></script>
+
+
+	{% block scripts %}
+	{% endblock %} 
+
+	</body>
+</html>

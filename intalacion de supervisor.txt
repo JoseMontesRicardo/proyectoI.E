@@ -1,0 +1,4 @@
+npm i -g supervisor;
+
+para instalar todos los paquetes es:
+npm install

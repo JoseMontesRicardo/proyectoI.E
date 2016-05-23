@@ -1,0 +1,31 @@
+<div class="modal" id="modal-editar-area">
+	<div class="modal-content">
+		<div class="row">
+			<h5 class="teal-text">Consultar Área</h5>
+			<input type="text" class="col s3 left" ng-model="$parent.editarAreaBuscar" placeholder="Buscar">
+			<a class="btn-floating btn teal" ng-click="buscarArea()"><i class="large material-icons center">search</i></a>
+			
+		</div>
+		<div class="row">
+			<div class="input-field col  s6">
+				<i class="material-icons prefix">local_offer</i>
+					<input ng-model="$parent.editarAreaCodigo" type="text" class="validate">
+				<label class="editarArealabel">Código</label>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">description</i>
+					<input ng-model="$parent.editarAreaNombre" type="text" class="validate">
+				<label class="editarArealabel">Nombre</label>
+			</div>
+		</div>	
+	</div>
+	<div class="modal-footer">
+		<a class="btn waves-effect waves-default" ng-click="editarArea()" >Modificar</a>
+		<a class="btn waves-effect waves-default"  >Eliminar</a>
+	</div>	
+</div>	
+<script>
+	$('select').material_select();
+</script>

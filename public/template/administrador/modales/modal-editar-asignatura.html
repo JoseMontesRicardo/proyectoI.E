@@ -1,0 +1,34 @@
+<div class="modal" ng-init="cargarAreas()" id="modal-editar-asignatura">
+	<div class="modal-content">
+		<div class="row">
+			<h5 class="teal-text">Consultar Asignatura</h5>
+			<input type="text" class="col s3 left" ng-model="$parent.editarAsignaturaBuscar" placeholder="Buscar">
+			<a class="btn-floating btn teal" ng-click="buscarAsignatura()"><i class="large material-icons center">search</i></a>		
+		</div>
+		<div class="row">
+			<select ng-model="$parent.editarAsignaturaArea" class="browser-default col s4 tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="seleccione el código de área">
+				<option id="grado-default" value="">seleccion el area</option>
+				<option value="{{ item.codigo }}" ng-repeat="item in $parent.listaAreas ">{{ item.nombre }}</option>
+			</select>	
+		</div>	
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">description</i>
+					<input ng-model="$parent.editarAsignaturaNombre" type="text" class="validate">
+				<label class="editarAsignaturalabel">Nombre</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">local_offer</i>
+					<input ng-model="$parent.editarAsignaturaCodigo" type="text" class="validate">
+				<label class="editarAsignaturalabel">Codigo asignatura</label>
+			</div>
+		</div>	
+		
+		<div class="modal-footer">
+				<a class="btn waves-effect waves-default">Modificar</a>
+		</div>
+	</div>	
+</div>	
+<script>
+	$('select').material_select();
+</script>

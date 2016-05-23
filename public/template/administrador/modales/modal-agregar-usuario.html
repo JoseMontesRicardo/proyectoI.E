@@ -1,0 +1,92 @@
+<!-- modal para agregar el nuevo usuario -->
+<div class="modal" id="modal-agregar-usuario">
+	<div class="modal-content">
+		<h4 class="teal-text">Nuevo Usuario</h4>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.registrarUsuarioNombre1" length="20" id="icon_prefix"  type="text" class="validate">
+				<label for="icon_prefix">Primer Nombre</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.registrarUsuarioNombre2" length="20"id="icon_prefix" type="text" class="validate">
+				<label for="icon_prefix">segundo Nombre</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.registrarUsuarioApellido1" length="20" id="icon_prefix"  type="text" class="validate">
+				<label for="icon_prefix">primer apellido</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.registrarUsuarioApellido2" length="20" id="icon_prefix" type="text" class="validate">
+				<label for="icon_prefix">segundo apellido</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">assignment_ind</i>
+					<input ng-model="$parent.registrarUsuarioCedula" length="20" id="icon_prefix"  type="number" class="validate">
+				<label for="icon_telephone">cedula</label>
+			</div>
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">wc</i>
+				<select name="" ng-model="$parent.registrarUsuarioSexo" class="col s11 right">
+					<option value="" disabled selected>SEXO</option>
+					<option value="M">M</option>
+					<option value="F">F</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">place</i>
+					<input ng-model="$parent.registrarUsuarioDireccion" length="30" id="direccion" type="text" class="validate">
+				<label>Dirección</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix left">wc</i>
+				<select name="" ng-model="$parent.registrarUsuarioTipo" class="col s11 right">
+					<option value="" disabled selected>Tipo de usuario</option>
+					<option value="3">Padre</option>
+					<option value="2">Docente</option>
+					<option value="1">Administrador</option>
+				</select>
+			</div>
+		</div>	
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">contact_mail</i>
+				<input ng-model="$parent.registrarUsuarioCorreo" class="validate" type="email">
+				<label>Correo</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">phone</i>
+				<input ng-model="$parent.registrarUsuarioTelefono"  length="10" class="validate" type="number">
+				<label>Telefono</label>
+			</div>
+		</div>
+
+	</div>
+	<div class="modal-footer">
+		<a class="btn waves-effect waves-default" ng-click="nuevoUsuario()">Registrar</a>
+	</div>	
+</div>
+
+<script> 
+	$(document).ready(function() {
+    $('input#icon_prefix').characterCounter();
+  });
+
+	$(document).ready(function() {
+    $('input#direccion').characterCounter();
+  });
+</script>
+<!-- modal para agregar el nuevo usuario -->

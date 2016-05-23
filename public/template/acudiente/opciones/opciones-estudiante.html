@@ -1,0 +1,31 @@
+<!-- plantilla de las opciones de los estudiantes -->
+<div class="contenedor-principal1"> 
+ 	<div ng-repeat=" datos in listaDatos">
+      <div class="card small col s5">
+      <div class="card-image waves-effect waves-block waves-light">    
+           <img class="activator contenedor-escudo__logotipo" src="img/keyner.JPG">
+         
+      </div>
+      <div class="card-content">
+         <span class="card-title activator teal-text text-darken-1">{{ datos.nombre1}} {{ datos.nombre2}} {{ datos.apellido1}} {{ datos.apellido2}}<i class="material-icons right">more_vert</i>
+         </span>
+            <p><h5 class="teal-text text-darken-1">Grado: {{ datos.grado }} - {{ datos.grupo}} </h5></p>
+      </div>
+
+      <div class="card-reveal">
+         <span class="card-title teal-text ">Datos Personales<i class="material-icons right">close</i>
+         </span>
+         <p> <h6 class="teal-text text-darken-4">Sexo: {{ datos.sexo }} </h6></br> 
+         <h6 class="teal-text text-darken-4">Dirección: {{ datos.direccion}} </h6></br> 
+         <h6 class="teal-text text-darken-4">Fecha de nacimiento: {{ datos.f_nacimiento}}</h6></p>
+      </div>
+    </div>  
+  </div>
+	<!-- <div class="waves-effect waves-light modal-trigger opciones1" data-target="modal1" ng-click="mostrarAgregarHijo()">
+		<i class="material-icons color5 large">child_care</i>
+		<i class="material-icons color5 small">edit</i>
+		<p class="teal-text">Modificar Hijo</p>
+	</div> -->
+</div>
+	
+<!-- plantilla de las opciones de los estudiantes -->

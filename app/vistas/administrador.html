@@ -1,0 +1,103 @@
+{% extends './plantillas/plantilla-administrador.html' %}
+
+{% block banner %}
+	<div class="contenedor-principal row" ng-init="inicio1()" ng-controller="cContenedorPrincipal">
+		<div class="barra-lateral col s2">
+			<figure class="contenedor-escudo">
+				<img class="contenedor-escudo__logotipo" src="img/escudo.png" alt="">
+			</figure>
+			<a href= "#/usuarios"class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">group</i>Usuarios</a>
+			<a href="#/estudiantes"class="opciones col s11 waves-effect waves-light btn"><i class="material-icons color right">child_care</i>Estudiantes</a>			
+			<a href="#/asignaturas" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons right">class</i>Asignaturas</a>
+			<a href="#/grados" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">bookmark</i>Grados</a>
+			<a href="#/logros" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">grade</i>Logros</a>
+			<a href="#/horarios" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">today</i>Horario</a>
+		</div>
+		
+		<!-- opciones cambiantes -->
+		<div ng-view class="col s10"></div>
+		<!-- opciones cambiantes -->
+		
+		<!-- todos los modales -->
+
+		<!-- modal para agregar estudiante -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-estudiante.html' "></div>
+		<!-- modal para agregar estudiante -->
+
+		<!-- modal para agregar estudiante -->
+		<div ng-include=" 'template/administrador/modales/modal-editar-estudiante.html' "></div>
+		<!-- modal para agregar estudiante -->
+
+		<!-- modal para agregar usuario -->
+		<div ng-include="'template/administrador/modales/modal-agregar-usuario.html'"></div>
+		<!-- modal para agregar usuario -->
+		<!-- modal para agregar usuario -->
+		<div ng-include="'template/administrador/modales/modal-editar-usuario.html'"></div>
+		<!-- modal para agregar usuario -->
+		
+
+		<!-- modal para agregar grado -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-grado.html' "></div>
+		<!-- modal para agregar grado -->
+		
+		<!-- modal para agregar grupo -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-grupo.html' "></div>
+		<!-- modal para agregar grupo -->
+
+		<!-- modal para agregar salon -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-salon.html' "></div>
+		<!-- modal para agregar salon -->
+
+		<!-- modal para eliminar salon -->
+		<div ng-include=" 'template/administrador/modales/modal-eliminar-salon.html' "></div>
+		<!-- modal para eliminar salon -->
+
+		<!-- modal para agregar area -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-area.html' "></div>
+		<!-- modal para agregar area -->
+		
+		<!-- modal para editar area -->
+		<div ng-include=" 'template/administrador/modales/modal-editar-area.html' "></div>
+		<!-- modal para editar area -->
+
+		<!-- modal para agregar asignatura -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-asignatura.html' "></div>
+		<!-- modal para agregar asignatura -->
+		<!-- modal para agregar asignatura -->
+		<div ng-include=" 'template/administrador/modales/modal-editar-asignatura.html' "></div>
+		<!-- modal para agregar asignatura -->
+
+		<!-- modal para agregar carga academica -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-CargaAcademica.html' "></div>
+		<!-- modal para carga academica -->
+
+		<!-- modal para agregar plan academico -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-PlanAcademico.html' "></div>
+		<!-- modal para agregar plan academico -->
+
+		<!-- modal para agregar logro -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-logro.html' "></div>
+		<!-- modal para agregar logro -->
+		<!-- modal para editar logro -->
+		<div ng-include=" 'template/administrador/modales/modal-editar-logro.html' "></div>
+		<!-- modal para editar logro -->
+		<!-- modal para agregar horario -->
+		<div ng-include=" 'template/administrador/modales/modal-agregar-horario.html' "></div>
+		<!-- modal para agregar horario -->
+		<!-- modal para editar horario -->
+		<div ng-include=" 'template/administrador/modales/modal-editar-horario.html' "></div>
+		<!-- modal para editar horario -->
+		
+
+		<!-- todos los modales -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+	<script src="js/main.js"></script> 
+	<script src="js/controladores/administrador/c.administrador.includes.js" ></script>
+	<script src="js/controladores/administrador/c.contenedor-principal.js" ></script>
+	<!-- modelos de esta pagina -->
+	<script src="js/modelos/administrador/m.administrador.js" ></script>
+	<!-- modelos de esta pagina -->
+{% endblock %}

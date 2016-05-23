@@ -1,0 +1,23 @@
+<div class="modal" id="modal-agregar-area">
+	<div class="modal-content">
+		<h4 class="teal-text">Nueva Area</h4>
+		<div class=" container row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">local_offer</i>
+					<input ng-model="$parent.registrarAreaCodigo" type="text" class="validate">
+				<label for="icon_prefix">Código</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">description</i>
+					<input ng-model="$parent.registrarAreaNombre" type="text" class="validate">
+				<label for="icon_prefix">Nombre</label>
+			</div>
+		</div>		
+	</div>
+	<div class="modal-footer">
+		<a class="btn waves-effect waves-default" ng-click="nuevaArea()">Registrar</a>
+	</div>	
+</div>	
+<script>
+	$('select').material_select();
+</script>

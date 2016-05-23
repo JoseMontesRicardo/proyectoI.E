@@ -1,0 +1,260 @@
+body{
+	height: 100vh;
+}
+
+@keyframes rotation{
+	0% 		{transform: rotate(-18deg);}
+	10%		{transform: rotate(18deg);}
+	20%		{transform: rotate(-16deg);}
+	30%		{transform: rotate(16deg);}
+	40%		{transform: rotate(-12deg);}
+	50%		{transform: rotate(12deg);}
+	60%		{transform: rotate(-9deg);}
+	70%		{transform: rotate(9deg);}
+	80%		{transform: rotate(-6deg);}
+	90%		{transform: rotate(6deg);}
+	100%	{transform: rotate(-2deg);}
+}
+
+.unread{
+	color: #07bc4c;
+	font-weight: bold;
+	display: none;
+}
+
+#modal-verificar-informe{
+	height: 400px;
+}
+
+#modal-agregar-grupo, #modal-agregar-grado{
+	width: 300px;
+}
+
+/*.caja-notificaciones{
+	position: relative;
+}*/
+
+.anclaje-mensaje__contenedor{
+	background-color: #fa3e3e;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px #424242;
+	color: white;
+	line-height: normal;
+	width: 19px;
+	height: 25px;
+	padding:.5rem;
+	position: absolute;
+	top: 5px;
+	right: 15.2%;
+	text-align: center;
+	font-size: .6rem;
+	font-weight: bold;
+	display: none;
+}
+
+.contenedor-principal{
+	height: 579px;
+}
+.contenedor-principal1{
+	height: 554px;
+	max-width: 1200px;
+	position: relative;
+	left: 24%
+}
+.contenedor-principal2{
+	height: 554px;
+	max-width: 1205px;
+	position: relative;
+	left: 9%
+}
+
+.contenedor-users-chat{
+	padding-top: 4rem;
+	height: 90vh;
+	overflow-x: hidden;
+}
+
+.barra-lateral{
+	background-color: rgb(144, 164, 174);
+	position: relative;
+}
+
+.barra-lateral, .contenido{
+	height: 100%;
+}
+
+.contenedor-escudo{
+	width: 50%;
+	position: relative;
+	left: 6%;
+}
+	.contenedor-escudo__logotipo{
+		width: 100%;
+		border-radius: 50%;
+		box-shadow: 1px 1px 10px black;
+	}
+
+
+.opciones{
+	margin: 1em;
+	border-radius: 2px;
+	
+}
+
+.online-ball{
+	color: #64dd17;
+	font-size: .7rem; 
+}
+
+.opciones1{
+			margin: 4em;
+			border-radius: 1px;
+			float: left;
+	}
+
+	.formularios{
+		margin:-1em;
+		border-radius: -2px;
+
+	}
+.prueba{
+	
+	float: left;
+	margin-right: 0.4em;
+}
+
+.error{
+	background-color: rgba(230,18,29,0.59);
+}
+
+.success{
+	background-color: green;
+}
+
+.input-field{
+	
+	position: relative;
+	right: 100%;
+
+}
+.material-icons.color { color: #ffff00; 
+}
+.material-icons.color1 { color: #1de9b6;
+}
+.material-icons.color2 { color: #90A4AE;
+}
+.material-icons.color3 { color: #d81b60;
+}
+.material-icons.color4 { color: #00bcd4;
+}
+.material-icons.color5 { color: #009688;
+}
+
+
+
+#home{
+	background: url(/img/loggin.jpg) 50% 0 no-repeat fixed;
+}
+
+#home{
+	min-height: 579px;
+	width: 1366px;
+}
+.dropdown-content{
+
+	color: #ffff00;
+	
+}
+.html {
+    font-family: thin, Trebuchet, sans-serif;
+  }
+
+.side-nav{
+    top: 65px;
+}
+.tabs .indicator{
+	background-color: #009688;
+}
+
+.tabs .tab a:hover {
+    color: #b2dfdb;
+}
+
+.tabs .tab a {
+    color: #009688;
+}
+.logo{
+  height: 62px;
+  width: 150px;
+}
+
+.input-field input[type=number].valid {
+     border-bottom: 1px solid #26a69a;
+     box-shadow: 0 1px 0 0 #26a69a;
+   }
+ .input-field input[type=text].valid {
+     border-bottom: 1px solid #26a69a;
+     box-shadow: 0 1px 0 0 #26a69a;
+   }
+
+.iconos{
+  margin: 1em;
+  border-radius: 2em;
+  position: relative;
+}
+
+.imagen{
+	height: 250px;
+}
+
+.ventana-chat{
+	width: 280px;
+	height: 350px;
+	display: none;
+	background-color: #eeeeee;
+	
+	position: fixed;
+	bottom:0;
+	right: 250px;
+	z-index: 3000;
+}
+	.input-msm{
+		position: absolute;
+		bottom: -9px;
+		background-color: ;
+	}
+	.contenedor-mensajes{
+		width: 100%;
+		height: 80%;
+		padding-bottom: 4rem;
+		overflow: scroll; 
+	}
+
+		.mensaje-receptor{
+			font-size: .7em;
+			background-color: #80cbc4;
+			padding: 0.3em;
+			margin:2px;
+			border-radius: 0px 8px 8px 8px;
+			width: 200px;
+		}
+
+		.mensaje-emisor{
+			font-size: .7em;
+			background-color: #f8bbd0;
+			padding: 0.3em;
+			margin: 2px 2px 2px 4rem;
+			border-radius: 8px 0px 8px 8px;
+			width: 200px;
+		}
+
+			.mensaje-msm{
+				word-wrap: break-word;
+			}
+
+.rotate{
+		animation-name: rotation;
+		animation-duration: .5s;
+		animation-timing-function: ease;
+}
+ 

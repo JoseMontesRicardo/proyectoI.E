@@ -1,0 +1,80 @@
+<div class="modal" id="agregar-hijo">
+	<div class="modal-content">
+		<h4 class="teal-text">Registre su(s) Hijo(s)</h4>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.agregarHijoNombre1" type="text" class="validate">
+				<label for="icon_prefix">Primer Nombre</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.agregarHijoNombre2" type="text" class="validate">
+				<label for="icon_prefix">Segundo Nombre</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.agregarHijoApellido1" type="text" class="validate">
+				<label for="icon_prefix">Primer apellido</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.agregarHijoApellido2" type="text" class="validate">
+				<label for="icon_prefix">Segundo apellido</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">insert_invitation</i>
+				<input ng-model="$parent.agregarHijoNacimiento" id="icon_prefix" type="date">
+			</div>
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">wc</i>
+				<select ng-model="$parent.agregarHijoSexo" name="" class="col s10 right browser-default">
+					<option value="" disabled selected>SEXO</option>
+					<option value="M">M</option>
+					<option value="F">F</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">school</i>
+				<select ng-model="$parent.agregarHijoGrupo" class="browser-default col s10 right" material-select watch>
+					<option id="grado-default" value="">seleccion el grupo</option>
+					<option value="{{ item.idgrupo }}" ng-repeat="item in $parent.listaGrupos ">{{ item.idgrupo }}</option>
+				</select>
+			</div>
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">school</i>
+				<select ng-model="$parent.agregarHijoGrado" class="browser-default col s10 right" material-select watch>
+					<option id="grado-default" value="">seleccion el grado</option>
+					<option value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">face</i>
+				<input ng-model="$parent.agregarHijoTi" id="ti" type="number" class="validate">
+				<label for="ti">Tarjeta Identidad</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">place</i>
+				<input ng-model="$parent.agregarHijoDireccion" type="text" class="validate">
+				<label>Dirección</label>
+			</div>
+		</div>		
+	</div>
+	<div class="modal-footer">
+		<a class="btn waves-effect waves-default" ng-click="nuevoHijo()">Registrar</a>
+	</div>	
+</div>	
+<script>
+	$('select').material_select();
+</script>

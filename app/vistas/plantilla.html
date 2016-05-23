@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/materialize.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<nav>
+    	<div class="nav-wrapper teal">
+     		<a href="#" class="brand-logo">Logo</a>
+     		<ul id="nav-mobile" class="right hide-on-med-and-down">
+    			
+    			{% block nickname %}
+    			{% endblock %}
+        
+    		</ul>
+ 		</div>
+  	</nav>
+
+
+	<div class="contenedor-principal row">
+		<div class="barra-lateral col s2">
+			<figure class="contenedor-escudo">
+				<img class="contenedor-escudo__logotipo" src="img/escudo.jpg" alt="">
+			</figure>
+  				
+			<a href="/informacion"class="opciones col s11 waves-effect waves-light btn"><i class="material-icons color1 right">folder_shared</i>informacion</a>
+			<a href= "/docentes"class="opciones col s11 waves-effect waves-light btn"><i class="material-icons color right">person</i>Docentes</a>
+			<a href="/asignaturas" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons color2 right">class</i>Asignaturas</a>
+			<a href="/horarios" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons color4 right">insert_invitation</i>Horario</a>
+			<a href="/mensajes" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons color3 right">message</i>Mensajes</a>
+				
+
+		</div>
+{% block body %}
+
+  
+	{% endblock %}
+
+</div>
+	
+
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/vendor/materialize.min.js"></script>
+	
+</body>
+</html>

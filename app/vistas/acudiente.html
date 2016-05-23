@@ -1,0 +1,76 @@
+{% extends './plantillas/plantilla-acudiente.html' %}
+
+{% block banner %}
+	<div class="contenedor-principal">
+		<div id="{{ cedulaChat }}" class="ventana-chat">
+			<nav>
+		    	<div class="nav-wrapper  pink darken-1">
+					<ul class="left">
+						<li><a href="">{{ nombreChat }} <span class="unread">  escribiendo...</span></a></li>
+					</ul>
+			    	<ul id="nav-mobile" class="right hide-on-med-and-down">
+			    		<li><a href="" ng-click="ocultarVentana()"><i class="Tiny material-icons">close</i></a></li>
+			    	</ul>
+		    	</div>
+  			</nav>
+  			<div class="input-msm">
+  				<div class="row">
+  					<input class="col s8" ng-model="mensajeEnviar" type="text" placeholder="Escriba aqui." ng-change="avisarEscritura(cedulaChat)" ng-click="enviarLeido(cedulaChat)">
+  					<button class="btn col s4" ng-click="enviarMensaje(cedulaChat, mensajeEnviar)">Enviar</button>
+  				</div>
+  			</div>
+			<div id="contendor-mensajes" class="contenedor-mensajes">
+				<div class="" ng-repeat=" mensaje in mensajesChat ">
+					<p class="mensaje-receptor mensaje-msm" ng-if=" mensaje.emisor == cedulaChat ">{{ mensaje.mensaje }}
+					</p>
+					<p class="mensaje-emisor mensaje-msm" ng-if=" mensaje.receptor == cedulaChat ">{{ mensaje.mensaje }}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+				<!-- opciones cambiantes -->
+		<div ng-view class="col s9"></div>
+		<!-- opciones cambiantes -->
+			<div class="col s2 contenedor-users-chat z-depth-2 right" >
+				<ul class=" col s12 collection">
+					<li class="collection-item avatar" ng-click="mostrarVentana(usuario.nombre1, usuario.cedula)" ng-repeat="usuario in usuariosConectados">
+						<i class="material-icons online-ball">fiber_manual_record</i>
+						<a href="">
+							<img id="{{usuario.cedula}}" class="tooltipped circle" data-position="left" data-delay="10" data-tooltip="haga click para chatear con el profe!" src="img/keyner.jpg">
+							<script>
+								$('.tooltipped').tooltip();
+							</script>
+						</a>
+						<span><a href="">{{usuario.nombre1}}</a></span>
+					</li>
+				</ul>
+			</div>
+			
+			
+		</div>
+
+
+
+
+		<!-- todos los modales -->
+
+		<!-- modal para agregar estudiante -->
+		<div ng-include=" 'template/acudiente/modales/agregar-hijo.html' "></div>
+		<!-- modal para agregar estudiante -->
+
+		<!-- todos los modales -->
+
+	</div>
+
+		
+{% endblock %}
+
+{% block scripts %}
+	<script src="js/main.js"></script>
+	<script src="js/factory-socket/factory-socket.js"></script>
+	<script src="js/services/users-chat.js" ></script>
+	<script src="js/controladores/acudiente/c.acudiente.includes.js" ></script>
+	<script src="js/controladores/acudiente/c.contenedor-acudiente.js" ></script>
+{% endblock %}
+

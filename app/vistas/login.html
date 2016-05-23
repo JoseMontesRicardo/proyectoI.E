@@ -1,0 +1,37 @@
+{% extends './plantillas/plantilla-login.html' %}
+
+{% block form %}
+
+<div class="row">
+    <form class="col s7 right" action="/verificar" method="post">
+      <div class="row">
+        <div class="input-field col s8 right">
+          <input id="identificacion" name="usuario" type="text" class="validate">
+            <label for="identificacion">User</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s8 right">
+          <input id="password" name="contrasena" type="password" class="validate">
+            <label for="password">Password</label>
+        </div>
+      </div>
+   <button class="btn-large waves-effect waves-light right" type="submit" name="action">ENTRAR</button>
+  </form>
+<section id="home" data-type="parallax_section" data-speed="8">
+    <article>
+      <div class="geek">     
+      </div>
+    </article>
+</section>
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}

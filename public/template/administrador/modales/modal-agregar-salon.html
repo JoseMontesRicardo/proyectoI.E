@@ -1,0 +1,25 @@
+<div class="modal" id="modal-agregar-salon" ng-init="cargarGradosGrupos()">
+	<div class="modal-content">
+		<h4 class="teal-text">Nuevo salon de clases</h4>		
+	</div>
+	<div class="container row">
+		<select ng-model="$parent.grados" class="browser-default col s6 tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="Seleccione el grado!">
+			<option id="grado-default" value="">seleccione el grado</option>
+			<option value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
+		</select>
+		<select ng-model="$parent.grupos" class="browser-default col s6 tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="Seleccione el grupo!">
+			<option id="grupo-default" value="">seleccione el grupo</option>
+			<option value="{{ item.idgrupo }}" ng-repeat="item in $parent.listaGrupos ">{{ item.idgrupo }}</option>
+		</select>
+	</div>
+	<div class="modal-footer">
+		<div class="container">
+			<a class="btn waves-effect waves-default col s6" ng-click="nuevoSalon()" >Registrar</a>
+		</div>
+	</div>	
+</div>	
+<script>
+	$('select').material_select();
+	$('.tooltipped').tooltip();
+</script>
+<script src="js/vendor/angular-materialize.js"></script>

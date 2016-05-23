@@ -1,0 +1,21 @@
+<div class="row contenedor-principal1" ng-controller="controladorSalones">
+	<h5 id="{{idAsignatura}}" ng-init="cargarNinos()">Alumnos {{ grado }}-{{grupo}} {{ materia }}</h5>
+	<table class="col s9 striped">
+        <thead>
+          <tr>
+              <th data-field="nombres">Nombres</th>
+              <th data-field="apellidos">Apellidos</th>
+              <th data-field="calificar">Calificar</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr id="{{ nino.ti }}" ng-repeat=" nino in ninos ">
+            <td>{{ nino.nombre1 }} {{ nino.nombre2 }}</td>
+            <td>{{ nino.apellido1 }} {{ nino.apellido2 }}</td>
+            <td><a href=""><i class="material-icons color1 small " ng-click="verificarInforme(nino.ti, nino.nombre1, nino.apellido1)">check_circle</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div ng-include=" 'template/docentes/modal-verificar-informe.html' "></div>
+</div>

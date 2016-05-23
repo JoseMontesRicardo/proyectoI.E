@@ -1,0 +1,95 @@
+<div class="contenedor-principal1">
+    <div class="row">
+      <div class="col s10">
+      <div class="row">
+        <p></p>
+        <table class="bordered striped hihlight col s2">
+          <thead>
+            <tr>
+                <th class="yellow accent-2" data-field="horas">Horas</th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr ng-repeat=" lunes in listaLunes">
+              <td>{{ lunes.hora }}</td>
+            </tr>
+          </tbody>
+
+        </table>
+        <table class="bordered striped hihlight col s2">
+          <thead>
+          <tr>
+          <th class="yellow accent-2" data-field="horas">Lunes</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tbody>
+            <tr ng-repeat=" lunes in listaLunes">
+              <td> {{ lunes.nombre }} [{{ lunes.grado}}°{{ lunes.grupo}}]</td>
+            </tr>
+          </tbody>
+          </tbody>
+        </table>
+
+        <table class="bordered striped hihlight col s2">
+          <thead>
+          <tr>
+          <th class="yellow accent-2" data-field="horas">Martes</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr ng-repeat=" martes in listaMartes">
+              <td>{{ martes.nombre }}</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="bordered striped hihlight col s2">
+          <thead>
+          <tr>
+          <th class="yellow accent-2" data-field="horas">Miercoles</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr ng-repeat=" miercoles in listaMiercoles">
+              <td>{{ miercoles.nombre }}</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="bordered striped hihlight col s2">
+          <thead>
+          <tr>
+          <th class="yellow accent-2" data-field="horas">Jueves</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr ng-repeat=" jueves in listaJueves">
+              <td>{{ jueves.nombre }}</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="bordered striped hihlight col s2">
+          <thead>
+          <tr>
+          <th class="yellow accent-2" data-field="horas">Viernes</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr ng-repeat=" viernes in listaViernes">
+              <td>{{ viernes.nombre }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+  </div>
+</div>

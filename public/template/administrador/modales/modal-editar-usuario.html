@@ -1,0 +1,83 @@
+<!-- modal del formulario para editar estudiantes -->
+<div class="modal" id="modal-editar-usuario">
+	<div class="modal-content">
+		<div class="row">
+			<h4 class="teal-text col s6">Editar Usuario</h4>
+			<div class="col s6">
+				<input type="text" class="col s4 right" ng-model="$parent.editarUsuarioBuscar" placeholder="Buscar">
+				<a class="btn-floating right btn teal" ng-click="buscarUsuario()">
+					<i class="large material-icons">search</i>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+				<input ng-model="$parent.editarUsuarioNombre1" id="icon_prefix" type="text" class="validate inputEditarUsuario" required pattern="[A-Za-z]{15}">
+				<label for="icon_prefix" class="editarUsuariolabel">Primer Nombre</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.editarUsuarioNombre2" id="icon_prefix" type="text" class="validate">
+				<label for="icon_prefix" class="editarUsuariolabel">segundo Nombre</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.editarUsuarioApellido1" type="text" class="validate">
+				<label class="editarUsuariolabel">primer apellido</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">account_circle</i>
+					<input ng-model="$parent.editarUsuarioApellido2" type="text" class="validate">
+				<label class="editarUsuariolabel">segundo apellido</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">assignment_ind</i>
+				<input ng-model="$parent.editarUsuarioCedula" type="number" class="validate" disabled>
+				<label class="editarUsuariolabel">cedula</label>
+			</div>
+			<div class="input-field col s6 right">
+				<i class="material-icons prefix left">wc</i>
+				<select ng-model="$parent.editarUsuarioSexo" class="col s10 right browser-default"  material-select watch>
+					<option value="" disabled selected>SEXO</option>
+					<option id="masculino" value="M">M</option>
+					<option id="femenino" value="F">F</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">place</i>
+				<input ng-model="$parent.editarUsuarioDireccion" id="icon_telephone" type="text" class="validate">
+				<label class="editarUsuariolabel">direccion</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">contact_mail</i>
+				<input ng-model="$parent.editarUsuarioCorreo" class="validate" id="icon_prefix" type="email">
+				<label  class="editarUsuariolabel">Correo</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">vpn_key</i>
+				<input ng-model="$parent.editarUsuarioContrasena" type="password" class="validate">
+				<label class="editarUsuariolabel">Contraseña</label>
+			</div>
+			<div class="input-field col s6">
+				<i class="material-icons prefix">phone</i>
+				<input ng-model="$parent.editarUsuarioTelefono" class="validate" type="number">
+				<label class="editarUsuariolabel">Telefono</label>
+			</div>
+		</div>	
+	</div>
+	<div class="modal-footer">
+		<a class="btn waves-effect waves-default" ng-click="editarUsuario()">Modificar</a>
+	</div>	
+</div>
+<!-- modal del formulario para editar estudiantes -->

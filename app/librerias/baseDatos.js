@@ -1,7 +1,7 @@
 var orm 	= require('orm'),
 	user 	= 'root',
 	pass 	= '123456',
-	host 	= 'localhost',
+	host 	= '127.0.0.1',
 	db 		= 'db_colegio',
 	string 	= 'mysql://'+ user +':'+ pass +'@'+ host +'/'+ db +''
 

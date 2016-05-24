@@ -217,6 +217,6 @@ chat.on('connection', function(socket){
 
 
 
-http.listen(80, function(){
+http.listen(3000, function(){
 	console.log('server corriendo en port:3000')
 })

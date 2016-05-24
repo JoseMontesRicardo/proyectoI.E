@@ -24,7 +24,7 @@ var getDocentesController = (db)=>{
 				INNER JOIN asignatura
 				ON ( asignatura.idasignatura = horario.idasignatura )
 				WHERE (grado = ${alumno.grado} and grupo = ${alumno.grupo})
-				GROUP BY grado, grupo, horario.idasignatura`, (err, result)=>{
+				GROUP BY usuario.nombre1, nombre2, apellido1, apellido2, asignatura.nombre, grado, grupo, horario.idasignatura`, (err, result)=>{
 						if ( err ){
 							throw (err)
 						} else {

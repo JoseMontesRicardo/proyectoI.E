@@ -7,9 +7,7 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 	$scope.mensajesChat = []
 
 	$interval(()=>{
-		if ( $('.unread').is(':visible') ){
-			$('.unread').hide()
-		}
+		$('.unread').hide()
 	},3000)
 
 	socket.on('docentesConectados', function(data){
@@ -67,7 +65,6 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 
 	socket.on('escribiendo', (data)=>{
 		cedulaAvisar = data.cedula
-		console.log($scope.cedulaChat +'==='+ cedulaAvisar)
 		if ( $scope.cedulaChat === cedulaAvisar ){
 			$('.unread').show()
 		}

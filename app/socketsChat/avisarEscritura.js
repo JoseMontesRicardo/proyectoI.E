@@ -20,7 +20,6 @@ avisarEscritura = (socket, io,redisClient)=>{
 		getSocketId(cedulaReceptor)
 		.then( socketId => {
 			for (i in socks){
-				console.log(socks[i].id+'-'+socketId)
 				if ( socks[i].id === socketId ){
 					socks[i].emit('escribiendo', { cedula: cedulaAvisar })
 				}

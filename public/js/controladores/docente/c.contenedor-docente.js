@@ -94,9 +94,7 @@ moduleDocente.controller('docenteController', function($scope, socket, $http, $t
 	
 
 	$interval(()=>{
-		if ( $('.unread').is(':visible') ){
-			$('.unread').hide()
-		}
+		$('.unread').hide()
 	},3000)
 
 	socket.on('usuariosConectados', function(data){
@@ -174,8 +172,6 @@ moduleDocente.controller('docenteController', function($scope, socket, $http, $t
 
 	socket.on('escribiendo', (data)=>{
 		cedulaAvisar = data.cedula
-		console.log($scope.cedulaChat +'==='+ cedulaAvisar)
-
 		if ( $scope.cedulaChat === cedulaAvisar ){
 			$('.unread').show()
 		}

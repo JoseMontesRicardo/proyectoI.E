@@ -6,7 +6,7 @@ obtenerNoLeido = (socket,db)=>{
 								INNER JOIN mensajes 
 									on ( usuario.cedula = mensajes.emisor ) 
 								WHERE ( mensajes.leido = 0 and mensajes.receptor = ${cedula}) 
-								GROUP BY mensajes.emisor`,
+								GROUP BY mensajes.emisor, usuario.nombre1, usuario.apellido1, mensajes.emisor, mensajes.receptor, mensajes.mensaje, mensajes.leido`,
 							( err, res )=>{
 								if ( err ){
 									throw (err)

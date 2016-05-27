@@ -6,8 +6,8 @@
         <div ng-repeat=" asignatura in listaAsignatura">
           <div class="col s3.5" >            
               <div class="card-panel">
-                <h5>{{ asignatura.nombre }}</h5>
-                <a href="#/opciones-asignaturas" class="waves-effect waves-light btn teal accent-4">Ver asignatura</a>
+                <h5 id = "{{ asignatura.idasignatura }}">{{ asignatura.nombre }}</h5>
+                <a href="#/opciones-asignaturas/{{ asignatura.idasignatura }}" class="waves-effect waves-light btn teal accent-4">Ver asignatura</a>
               </div>
             </div>
           </div>

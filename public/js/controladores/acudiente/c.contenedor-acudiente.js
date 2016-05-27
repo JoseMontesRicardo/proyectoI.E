@@ -2,9 +2,11 @@ var acudienteControlador = angular.module('acudienteControlador', [
 	'factorySocket'
 	])
 
-acudienteControlador.controller('controladorAcudientes', function($scope, $http, socket, $timeout, $interval){
+acudienteControlador.controller('controladorAcudientes', function($scope, $http, socket, $timeout, $interval, $routeParams){
 	$scope.notificaciones = []
 	$scope.mensajesChat = []
+
+
 
 	$interval(()=>{
 		$('.unread').hide()
@@ -211,13 +213,13 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 			
 		})
 
-		req = $http.post('/getLogro', { ti: ti })
-		req.success(function(res){
-			$scope.listaLogros = res.logro
-		})
-		req.error(function(err){
+		// req = $http.post('/getLogro', { ti: ti })
+		// req.success(function(res){
+		// 	$scope.listaLogros = res.logro
+		// })
+		// req.error(function(err){
 			
-		})
+		// })
 
 
 		req = $http.post('/getDatos', { ti: ti })
@@ -249,7 +251,20 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 			
 		})
 	}
+	//Cargar datos acudiente
+		$scope.cargarDatosAcudiente = function(){
+		reqAjax = $http.post('/getDatosAcudiente')
+		.success(function(res){
+			$scope.listaInfo = res.info
+		})
+		.error(function(err){
+			
+		})
+	}
 
+	//cambiar contraseña
+
+	
 	//Cargar asignaturas 
 	$scope.cargarAsignatura = function(ti){
 		reqAjax = $http.post('/getAsignatura')
@@ -264,13 +279,18 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 
 	//Cargar logros 
 	$scope.cargarLogros = function(ti){
-		reqAjax = http.post('/getLogro')
-		.success(function(res){
-			$scope.listaLogros = res.logro
-		})
-		.error(function(err){
+		periodo = $scope.selectPeriodo
+		if ( periodo ){
+			reqAjax = $http.post('/getLogro', {idasignatura : $routeParams.asignatura, periodo: periodo})
+			.success(function(res){
+				$scope.listaLogros = res.logro
+			})
+			.error(function(err){
 
-		})
+			})
+		} else {
+			Materialize.toast('debe seleccionar un periodo', 2000)
+		}
 	}
 
 

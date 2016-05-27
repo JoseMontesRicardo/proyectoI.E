@@ -1,0 +1,33 @@
+<div class="modal modal-fixed-footer" id="modal-eliminar-grado" ng-init="cargarGrados()">
+	<div class="modal-content">
+		<h4 class=" center grey-text">Eliminar Grados</h4>
+		<div class="container">
+		<table class=" bordered striped hoverable highlight centered">
+			<thead>
+				<tr>
+					<th data-field="id">Grado</th>
+					<th data-field="button">Eliminar</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="grado in $parent.grados">
+					<td>{{ grado.idgrado }}</td>
+					<td>
+						<a ng-click="eliminarGrado(grado.idgrado)" href="" class="tooltipped btn-floating btn waves-effect waves-light orange" data-position="right" data-delay="50" data-tooltip="click para eliminar"><i class="material-icons">close</i></a>
+					</td>
+					<script>
+						$('.tooltipped').tooltip({delay: 50});
+					</script>
+				</tr>
+			</tbody>
+		</table>
+		</div>	
+	</div>
+	<div class="modal-footer">
+			<!-- <a class="btn waves-effect waves-default col s4">Eliminar</a> -->
+	</div>	
+</div>	
+<script>
+</script>
+<script src="js/vendor/angular-materialize.js"></script>

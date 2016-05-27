@@ -1,0 +1,35 @@
+<div class="modal modal-fixed-footer" id="modal-eliminar-carga" ng-init="cargarCargas()">
+	<div class="modal-content">
+		<h4 class=" center grey-text">Eliminar Carga académica</h4>
+		<div class="container">
+		<table class=" bordered striped hoverable highlight centered">
+			<thead>
+				<tr>
+					<th data-field="id">Cédula Docente</th>
+					<th data-field="name">Código Asignatura</th>
+					<th data-field="button">Eliminar</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="carga in $parent.cargas ">
+					<td>{{ carga.docente_cedula }}</td>
+					<td>{{ carga.idasignatura }}</td>
+					<td>
+						<a ng-click="eliminarCarga(carga.docente_cedula, carga.idasignatura)" href="" class="tooltipped btn-floating btn waves-effect waves-light orange" data-position="right" data-delay="50" data-tooltip="click para eliminar"><i class="material-icons">close</i></a>
+					</td>
+					<script>
+						$('.tooltipped').tooltip({delay: 50});
+					</script>
+				</tr>
+			</tbody>
+		</table>
+		</div>	
+	</div>
+	<div class="modal-footer">
+			<!-- <a class="btn waves-effect waves-default col s4">Eliminar</a> -->
+	</div>	
+</div>	
+<script>
+</script>
+<script src="js/vendor/angular-materialize.js"></script>

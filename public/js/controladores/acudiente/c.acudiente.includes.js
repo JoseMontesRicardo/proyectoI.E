@@ -8,7 +8,7 @@ appAcudiente.config(function($routeProvider){
 	}).otherwise({
 		redirectTo: '/'
 	})
-	$routeProvider.when('/opciones-asignaturas', {
+	$routeProvider.when('/opciones-asignaturas/:asignatura', {
 		templateUrl: 'template/opciones-asignaturas.html'
 	}).otherwise({
 		redirectTo: '/'
@@ -30,6 +30,12 @@ appAcudiente.config(function($routeProvider){
 	})
 	$routeProvider.when('/docentes', {
 		templateUrl: 'template/docentes.html'
+	}).otherwise({
+		redirectTo: '/'
+	})
+
+	$routeProvider.when('/informacion', {
+		templateUrl: 'template/acudiente/informacion.html'
 	}).otherwise({
 		redirectTo: '/'
 	})

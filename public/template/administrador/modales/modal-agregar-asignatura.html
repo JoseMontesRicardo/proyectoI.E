@@ -10,12 +10,12 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix">local_offer</i>
 					<input ng-model="$parent.registrarAsignaturaCodigo" type="text" class="validate">
-				<label for="icon_prefix">Codigo asignatura</label>
+				<label for="icon_prefix">Código asignatura</label>
 			</div>
 		</div>	
 		<div class="row">
 			<select ng-model="$parent.registrarAsignaturaArea" class="browser-default col s4 tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="seleccione el código de área">
-				<option id="grado-default" value="">seleccion el area</option>
+				<option id="grado-default" value="">Seleccione el área</option>
 				<option value="{{ item.codigo }}" ng-repeat="item in $parent.listaAreas ">{{ item.nombre }}</option>
 			</select>
 		</div>	

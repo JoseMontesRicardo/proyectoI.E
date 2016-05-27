@@ -4,7 +4,7 @@
 	</div>
 	<div class="container row">
 		<select ng-model="$parent.asignaturas" class="browser-default col s6 tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="Seleccione la asignatura ">
-			<option id="asignatura-default" value="">seleccione la asignatura</option>
+			<option id="asignatura-default" value="">Seleccione la asignatura</option>
 			<option value="{{ item.idasignatura }}" ng-repeat="item in $parent.listaAsignaturas">{{ item.nombre }}</option>
 		</select>
 	</div>
@@ -12,7 +12,7 @@
 		<div class="input-field col s6">
 				<i class="material-icons prefix">assignment_ind</i>
 				<input ng-model="$parent.docentes" type="number" class="validate tooltipped" data-position="top" data-delay="10" data-tooltip="Docente que la imparte">
-				<label>Cedula docente</label>
+				<label>Cédula Docente</label>
 	</div>
 	</div>
 	

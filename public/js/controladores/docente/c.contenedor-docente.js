@@ -67,6 +67,10 @@ moduleDocente.controller('controladorSalones', function($scope, socket, $http, $
 			}
 		})
 	}
+
+	$scope.mostrarModalContrasena = ()=>{
+		$('#modal-cambiar-contrasena').openModal()
+	}
 	$scope.verificarInforme = (ti, nombre, apellido)=>{
 		$scope.modalNombre 		= nombre 
 		$scope.modalApellido 	= apellido
@@ -295,6 +299,7 @@ moduleDocente.controller('docenteController', function($scope, socket, $http, $t
 		.success((res=>{
 			$scope.mensajesChat = res.mensajes
 		}))
+
 		socket.emit('eventoLeido', { cedulaReceptor: cedulaReceptor })
 		$scope.nombreChat = nombre
 		$scope.cedulaChat = cedulaReceptor

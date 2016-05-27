@@ -2,28 +2,25 @@ var _ = require('underscore')
 
 var getLogrosController = (db)=>{
 	return (req, res)=>{
-		
-		var ti = req.body.ti,
-			alumno = {}
-
+	var ti,
+		idasignatura 	= req.body.idasignatura,
+		periodo 		= req.body.periodo	
 
 		req.session.objsesion.hijos.forEach( function(element, index) {
-			if (element.ti === ti.toString()){
-				element.selected 	= true
-				alumno 				= element
-			} else {
-				element.selected = false
-			}
+			if (element.selected === true){
+				ti = element.ti
+				console.log(ti)
+			} 
 		})
 	
-		var obtenerLogro = ()=>{
+		var obtenerLogro = (ti)=>{
 			return new Promise( (resolve, reject)=>{
 				db.driver.execQuery(`select logro.nombre, informe_logro.nota, informe_logro.observacion from informe_logro
 				INNER JOIN logro 
 				ON ( logro.idlogro = informe_logro.logro_idlogro)
 				INNER JOIN informe
 				ON ( informe_logro.informe_idinforme = informe.idinforme)
-				where ( informe.estudiante_ti = ${alumno.ti})`, (err, result)=>{
+				where ( informe.estudiante_ti = '${ti}' and logro.idasignatura = ${idasignatura} and logro.periodo = '${periodo}' )`, (err, result)=>{
 						if ( err ){
 							throw (err)
 						} else {
@@ -33,10 +30,11 @@ var getLogrosController = (db)=>{
 					})
 			} )
 		}
-		obtenerLogro()
+		obtenerLogro(ti)
 		.then( result => {
 			res.send( { logro : result } )
 		} )
+		.catch(err=>console.log(err))
 	}
 }
 

@@ -21,9 +21,10 @@ var verificarController = (usuarios)=>{
 					}
 					if ( req.session.objsesion.nivel === 3  ){
 						res.redirect('/acudiente')
-					}
-					if ( req.session.objsesion.nivel === 2  ){
+					} else if ( req.session.objsesion.nivel === 2  ){
 						res.redirect('/docente')
+					} else if ( req.session.objsesion.nivel === 1  ){
+						res.redirect('/administrador')
 					}
 				} else {
 					res.redirect('login')

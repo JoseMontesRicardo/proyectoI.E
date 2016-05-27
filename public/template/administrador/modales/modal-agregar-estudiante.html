@@ -10,7 +10,7 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix">account_circle</i>
 					<input ng-model="$parent.registrarEstudianteNombre2" type="text" class="validate">
-				<label for="icon_prefix">segundo Nombre</label>
+				<label for="icon_prefix">Segundo Nombre</label>
 			</div>
 		</div>
 
@@ -18,12 +18,12 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix">account_circle</i>
 					<input ng-model="$parent.registrarEstudianteApellido1" type="text" class="validate">
-				<label for="icon_prefix">primer apellido</label>
+				<label for="icon_prefix">Primer apellido</label>
 			</div>
 			<div class="input-field col s6">
 				<i class="material-icons prefix">account_circle</i>
 					<input ng-model="$parent.registrarEstudianteApellido2" type="text" class="validate">
-				<label for="icon_prefix">segundo apellido</label>
+				<label for="icon_prefix">Segundo apellido</label>
 			</div>
 		</div>
 
@@ -46,26 +46,26 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix">place</i>
 				<input ng-model="$parent.registrarEstudianteDireccion" id="icon_telephone" type="text" class="validate">
-				<label>direccion</label>
+				<label>Dirección</label>
 			</div>
 			<div class="input-field col s6">
 				<i class="material-icons prefix">assignment_ind</i>
 				<input ng-model="$parent.registrarEstudianteCedula" id="icon_telephone" type="number" class="validate">
-				<label>cedula padre</label>
+				<label>Cédula Padre</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s6 right">
 				<i class="material-icons prefix left">school</i>
 				<select ng-model="$parent.registrarEstudianteGrupo" class="browser-default col s10 right" material-select watch>
-					<option id="grupo-default" value="">seleccion el grupo</option>
+					<option id="grupo-default" value="">Seleccione el grupo</option>
 					<option value="{{ item.idgrupo }}" ng-repeat="item in $parent.listaGrupos ">{{ item.idgrupo }}</option>
 				</select>
 			</div>
 			<div class="input-field col s6 right">
 				<i class="material-icons prefix left">school</i>
 				<select ng-model="$parent.registrarEstudianteGrado" class="browser-default col s10 right" material-select watch>
-					<option id="grado-default" value="">seleccion el grado</option>
+					<option id="grado-default" value="">Seleccione el grado</option>
 					<option value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
 				</select>
 			</div>
@@ -74,7 +74,7 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix">face</i>
 				<input ng-model="$parent.registrarEstudianteTi" id="ti" type="number" class="validate">
-				<label for="ti">tarjeta identidad</label>
+				<label for="ti">Tarjeta Identidad</label>
 			</div>
 		</div>		
 	</div>

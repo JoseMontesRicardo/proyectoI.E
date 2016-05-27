@@ -650,6 +650,42 @@ controladorContenedorPrincipal.controller('cContenedorPrincipal', function($scop
 			
 		})
 	}	
+	$scope.cargarGrados = function(){
+		reqAjax = $http.post('/cargarGrados')
+		reqAjax.success(function(respuesta){
+			$scope.grados = respuesta.grados
+		})
+		reqAjax.error(function(error){
+			
+		})
+	}	
+	$scope.cargarGrupos = function(){
+		reqAjax = $http.post('/cargarGrupos')
+		reqAjax.success(function(respuesta){
+			$scope.grupos = respuesta.grupos
+		})
+		reqAjax.error(function(error){
+			
+		})
+	}
+	$scope.cargarPlanes = function(){
+		reqAjax = $http.post('/cargarPlanes')
+		reqAjax.success(function(respuesta){
+			$scope.planes = respuesta.planes
+		})
+		reqAjax.error(function(error){
+			
+		})
+	}
+	$scope.cargarCargas = function(){
+		reqAjax = $http.post('/cargarCargas')
+		reqAjax.success(function(respuesta){
+			$scope.cargas = respuesta.cargas
+		})
+		reqAjax.error(function(error){
+			
+		})
+	}
 	//BUSCAR AREAS
 	$scope.cargarAreas = function(){
 		reqAjax = $http.post('/cargarAreas' )
@@ -794,6 +830,7 @@ controladorContenedorPrincipal.controller('cContenedorPrincipal', function($scop
 	}
 -->//Todas las funciones para CONSULTAR//<--
 
+
 -->//Todas las funciones para ELIMINAR//<--
 
 	//ELIMINAR SALON	
@@ -811,6 +848,90 @@ controladorContenedorPrincipal.controller('cContenedorPrincipal', function($scop
 		reqAjax.success(function(respuesta){
 			if (respuesta.eliminado){
 				Materialize.toast('¡Salón ['+grado+'-'+grupo+'] Eliminado!',2000,'success')
+			}
+		})
+		reqAjax.error(function(error){
+			
+		})
+	}
+	$scope.eliminarGrado = function(idgrado){
+		reqAjax = $http.post('/eliminarGrado', { idgrado: idgrado })
+		$scope.grados.forEach( function(grado) {
+			if ( grado.idgrado === idgrado ){
+				arrayGrados   = _.without($scope.grados, grado)
+				$('.tooltipped').tooltip('remove')
+				$('.tooltipped').tooltip({delay: 50});
+				$scope.grados =  null
+				$scope.grados =  arrayGrados
+			}
+		})
+		reqAjax.success(function(respuesta){
+			if (respuesta.eliminado){
+				Materialize.toast('¡Grado ['+idgrado+'-'+'] Eliminado!',2000,'success')
+			}
+		})
+		reqAjax.error(function(error){
+			
+		})
+	}
+$scope.eliminarGrupo = function(idgrupo){
+		reqAjax = $http.post('/eliminarGrupo', { idgrupo: idgrupo })
+		$scope.grupos.forEach( function(grupo) {
+			if ( grupo.idgrupo === idgrupo ){
+				arrayGrupos   = _.without($scope.grupos, grupo)
+				$('.tooltipped').tooltip('remove')
+				$('.tooltipped').tooltip({delay: 50});
+				$scope.grupos =  null
+				$scope.grupos =  arrayGrupos
+			}
+		})
+		reqAjax.success(function(respuesta){
+			if (respuesta.eliminado){
+				Materialize.toast('¡Grupo ['+idgrupo+'-'+'] Eliminado!',2000,'success')
+			}
+		})
+		reqAjax.error(function(error){
+			
+		})
+	}
+
+	$scope.eliminarPlan = function(grado, asignatura){
+		reqAjax = $http.post('/eliminarPlan', { grado: grado, asignatura: asignatura })
+		$scope.planes.forEach( function(plan) {
+			if ( plan.grado_idgrado === grado && plan.asignatura_idasignatura === asignatura ){
+				arrayPlanes   = _.without($scope.planes, plan)
+				$('.tooltipped').tooltip('remove')
+				$('.tooltipped').tooltip({delay: 50});
+				$scope.planes =  null
+				$scope.planes =  arrayPlanes
+			}
+		})
+		reqAjax.success(function(respuesta){
+			if (respuesta.eliminado){
+				Materialize.toast('¡Plan academico ['+grado+'-'+asignatura+'] Eliminado!',2000,'success')
+			}
+		})
+		reqAjax.error(function(error){
+			
+		})
+	}
+
+	//Eliminar carga académico
+
+	$scope.eliminarCarga = function( cedula, asignatura){
+		reqAjax = $http.post('/eliminarCarga', { cedula: cedula, asignatura: asignatura })
+		$scope.cargas.forEach( function(carga) {
+			if ( carga.docente_cedula === cedula && carga.idasignatura === asignatura ){
+				arrayCargas   = _.without($scope.cargas, carga)
+				$('.tooltipped').tooltip('remove')
+				$('.tooltipped').tooltip({delay: 50});
+				$scope.cargas =  null
+				$scope.cargas =  arrayCargas
+			}
+		})
+		reqAjax.success(function(respuesta){
+			if (respuesta.eliminado){
+				Materialize.toast('¡Carga academica ['+cedula+'-'+asignatura+'] Eliminada!',2000,'success')
 			}
 		})
 		reqAjax.error(function(error){
@@ -870,6 +991,18 @@ controladorContenedorPrincipal.controller('cContenedorPrincipal', function($scop
 	}
 	$scope.mostrarModalEliminarSalon = function(){
 		$('#modal-eliminar-salon').openModal()
+	}
+	$scope.mostrarModalEliminarPlan = function(){
+		$('#modal-eliminar-plan').openModal()
+	}
+	$scope.mostrarModalEliminarCarga = function(){
+		$('#modal-eliminar-carga').openModal()
+	}
+	$scope.mostrarModalEliminarGrado = function(){
+		$('#modal-eliminar-grado').openModal()
+	}
+	$scope.mostrarModalEliminarGrupo = function(){
+		$('#modal-eliminar-grupo').openModal()
 	}
 	$scope.mostrarModalAgregarSalon = function(){
 		$('#modal-agregar-salon').openModal({

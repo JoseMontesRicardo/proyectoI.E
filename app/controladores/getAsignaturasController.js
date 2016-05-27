@@ -18,7 +18,7 @@ var getAsignaturasController = (db)=>{
 	
 		var obtenerAsignatura = ()=>{
 			return new Promise( (resolve, reject)=>{
-				db.driver.execQuery(`select asignatura.nombre from asignatura
+				db.driver.execQuery(`select asignatura.nombre, asignatura.idasignatura from asignatura
 				INNER JOIN grado_asignatura
 				ON ( grado_asignatura.asignatura_idasignatura = asignatura.idasignatura)
 				where ( grado_asignatura.grado_idgrado = ${alumno.grado})`, (err, result)=>{

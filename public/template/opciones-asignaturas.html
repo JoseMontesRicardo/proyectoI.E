@@ -11,8 +11,7 @@
 			            		<i class="material-icons color">star</i>
 			            		<i class="material-icons color">star</i>
 			            	</div>
-			           		<select class="col s12 browser-default tooltipped" data-position="right" data-delay="50" data-tooltip="seleccione el periodo" name="" id="">
-			           			<option class=" teal-text"  >PERÍODO</option>
+			           		<select ng-model="$parent.selectPeriodo" class="col s12 browser-default tooltipped" data-position="right" data-delay="50" data-tooltip="seleccione el periodo" name="" id="">
 								<option class=" teal-text" value="1">Período 1</option>
 								<option class=" teal-text" value="2">Período 2</option>
 								<option class=" teal-text" value="3">Período 3</option>
@@ -27,15 +26,35 @@
 							  	</ul> -->
 			            </div>
 			            <div class="card-action">
-
-			            	<a href="#/logros" class="waves-effect waves-light btn col s12 teal lighten-1 ">Logros</a>
-			            	
+			            	<a href=""  ng-click="cargarLogros()" class="waves-effect waves-light btn col s12 teal lighten-1 ">Logros</a>	            	
 			            </div>
 			        </div>
-			    </div>		      
-		</div>
-				
+			    </div>
+			    <div class="col s9" >
+						<table class="bordered striped hihlight col s12">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Logro</th>
+								<th>Nota</th>
+								<th>Observación</th>						
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat=" logro in listaLogros">
+								<td><i class="material-icons color">star</i></td>
+								<td >{{ logro.nombre }}</td>
+								<td>{{ logro.nota}}</td>
+								<td>{{ logro.observacion }}</td>
+							</tr> 
+						</tbody>
+						</table>
+				</div>		      
+		</div>				
 	</div>
+
+
+
 </div>
 <script>
 	$('select').material_select();

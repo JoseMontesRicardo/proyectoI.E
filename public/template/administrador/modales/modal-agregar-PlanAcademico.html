@@ -4,11 +4,11 @@
 	</div>
 	<div class="container row">
 		<select ng-model="$parent.asignaturas" class="browser-default col s6 tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="Seleccione la asignatura ">
-			<option id="asignatura-default" value="">seleccione la asignatura</option>
+			<option id="asignatura-default" value="">Seleccione la asignatura</option>
 			<option value="{{ item.idasignatura }}" ng-repeat="item in $parent.listaAsignaturas">{{ item.nombre }}</option>
 		</select>
 		<select ng-model="$parent.grados" class="browser-default col s6 tooltipped" material-select watch data-position="top" data-delay="10" data-tooltip="Grado en el que se imparte">
-			<option id="grado-default" value="">seleccion el grado</option>
+			<option id="grado-default" value="">Seleccion el grado</option>
 			<option value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
 		</select>
 	</div>

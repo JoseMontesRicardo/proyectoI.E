@@ -22,30 +22,46 @@
 
   <!-- aqui van las opciones para las asignaturas -->
   <div id="asignaturas" class="col s10">
-      <div class="row">
-          <div class=" waves-effect waves-light opciones1"  ng-click="mostrarModalAgregarAsignatura()">
+      <div class="row left opciones">
+          <div class=" waves-effect waves-light opciones"  ng-click="mostrarModalAgregarAsignatura()">
             <i class="material-icons color2 large">class</i>
             <p class="teal-text">Agregar asignatura</p>
           </div>
-          <div class=" waves-effect waves-light opciones1" ng-click="mostrarModalEditarAsignatura()">
+          <div class=" waves-effect waves-light opciones" ng-click="mostrarModalEditarAsignatura()">
             <i class="material-icons color2 large" >class</i>
             <i class="material-icons color2 small medium">search</i>
             <p class="teal-text">Consultar asignatura</p>
           </div>
-          <div class=" waves-effect waves-light opciones1" ng-click="mostrarModalPlanAcademico()">
+          
+      </div>
+      <div class="row left opciones">
+        <div class=" waves-effect waves-light opciones" ng-click="mostrarModalPlanAcademico()">
             <i class="material-icons color2 large" >class</i>
             <i class="material-icons color3 medium">school</i>
             <p class="teal-text">Asignar Plan Académico</p>
           </div>
-          
+          <div class=" waves-effect waves-light opciones">
+            <i class=" waves-effect waves-light material-icons color2 large" ng-click="mostrarModalEliminarPlan()">delete</i>
+            <i class="material-icons color3 medium">school</i>
+            <p class="teal-text">Eliminar Plan académico</p>
+          </div>
+        
       </div>
       <div class="row">
-          <div class=" waves-effect waves-light" ng-click="mostrarModalCargaAcademica()">
+          <div class=" waves-effect waves-light opciones" ng-click="mostrarModalCargaAcademica()">
             <i class="material-icons color2 large" >person</i>
             <i class="material-icons color3 medium">business_center</i>
             <p class="teal-text">Asignar Carga</p>
           </div>
+          <div class=" waves-effect waves-light opciones">
+      <i class=" waves-effect waves-light material-icons color2 large" ng-click="mostrarModalEliminarCarga()">delete</i>
+      <i class="material-icons color3 medium">business_center</i>
+      <p class="teal-text">Eliminar Carga</p>
+    </div>
+          
+
       </div>
+      
   </div>
   <!-- aqui van las opciones para las asignaturas -->
   

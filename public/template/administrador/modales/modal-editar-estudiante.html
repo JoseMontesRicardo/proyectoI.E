@@ -18,7 +18,7 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix">account_circle</i>
 				<input ng-model="$parent.editarEstudianteNombre2" type="text" class="validate">
-				<label class="editarEstudiantelabel">segundo Nombre</label>
+				<label class="editarEstudiantelabel">Segundo Nombre</label>
 			</div>
 		</div>
 
@@ -26,12 +26,12 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix">account_circle</i>
 				<input ng-model="$parent.editarEstudianteApellido1" id="icon_prefix" type="text" class="validate">
-				<label class="editarEstudiantelabel">primer apellido</label>
+				<label class="editarEstudiantelabel">Primer apellido</label>
 			</div>
 			<div class="input-field col s6">
 				<i class="material-icons prefix">account_circle</i>
 					<input ng-model="$parent.editarEstudianteApellido2" type="text" class="validate">
-				<label class="editarEstudiantelabel">segundo apellido</label>
+				<label class="editarEstudiantelabel">Segundo apellido</label>
 			</div>
 		</div>
 
@@ -59,19 +59,19 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix">assignment_ind</i>
 				<input ng-model="$parent.editarEstudianteCedula" type="number" class="validate">
-				<label class="editarEstudiantelabel">cedula padre</label>
+				<label class="editarEstudiantelabel">Cédula padre</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s6">
 				<i class="material-icons prefix">face</i>
 				<input ng-model="$parent.editarEstudianteTi" type="number" class="validate">
-				<label class="editarEstudiantelabel">tarjeta identidad</label>
+				<label class="editarEstudiantelabel">Tarjeta Identidad</label>
 			</div>
 			<div class="input-field col s6 right">
 				<i class="material-icons prefix left">school</i>
 				<select id="editar-estudiante-grado" ng-model="$parent.editarEstudianteGrado" class="browser-default col s10 right" material-select watch>
-					<option id="grado-default-editar-estudiante" value="">seleccion el grado</option>
+					<option id="grado-default-editar-estudiante" value="">Seleccione el grado</option>
 					<option id="{{ item.idgrado }}" value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
 				</select>
 			</div>

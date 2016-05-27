@@ -4,7 +4,7 @@ var AdministradorController = function (grados){
 			if (err){
 				throw (err)
 			} else {
-				res.render('administrador', { grado: grado })
+				res.render('administrador', { objsesion: req.session.objsesion })
 			}
 		})	
 	}

@@ -9,6 +9,11 @@ appDocente.config(function($routeProvider){
 	}).otherwise({
 		redirectTo: '/'
 	})
+	$routeProvider.when('/contrasena', {
+		templateUrl: 'template/docentes/cambiarContrasena.html'
+	}).otherwise({
+		redirectTo: '/'
+	})
 	$routeProvider.when('/cargas', {
 		templateUrl: 'template/cargar-asignaturas.html'
 	}).otherwise({

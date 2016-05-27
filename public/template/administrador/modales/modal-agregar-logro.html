@@ -10,7 +10,7 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix">description</i>
 					<input ng-model="$parent.registrarLogroNombre" type="text" class="validate">
-				<label for="icon_prefix">Nombre</label>
+				<label for="icon_prefix">Descripción</label>
 			</div>
 		</div>	
 		<div class="row">
@@ -27,7 +27,7 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix left color5">class</i>
 				<select  ng-model="$parent.registrarLogroAsignatura" class="browser-default col s10 right" material-select watch>
-				<option id="asignatura-default" value="">seleccione la asignatura</option>
+				<option id="asignatura-default" value="">Seleccione la asignatura</option>
 				<option value="{{ item.idasignatura }}" ng-repeat="item in $parent.listaAsignaturas ">{{ item.nombre }}</option>
 			</select>
 			</div>
@@ -37,7 +37,7 @@
 			<div class="input-field col s6">
 				<i class="material-icons prefix left color5">school</i>
 				<select ng-model="$parent.registrarLogroGrado" class="browser-default col s10 right" material-select watch>
-					<option id="grado-default" value="">seleccione el grado</option>
+					<option id="grado-default" value="">Seleccione el grado</option>
 					<option value="{{ item.idgrado }}" ng-repeat="item in $parent.listaGrados ">{{ item.idgrado }}</option>
 				</select>
 			</div>

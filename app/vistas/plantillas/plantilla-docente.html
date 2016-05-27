@@ -27,8 +27,8 @@
 				</li>
 				<li><a class="dropdown-button" href='#' data-activates="dropdown"><i class="material-icons">more_vert</i></a></li>
 				<ul id='dropdown' class="dropdown-content">
-					<li><a class="teal-text" href="#!"><i class="material-icons prueba">person</i>Mi perfil</a></li>
-					<li><a class="teal-text" href="#!"><i class="material-icons prueba">settings</i>Cambiar contraseña</a></li>
+					<li><a class="teal-text" ng-click="cargarDatosDocente()" href="#/informacion"><i class="material-icons prueba">person</i>Mi perfil</a></li>
+					<li><a class="teal-text" ng-click="mostrarModalContrasena()"><i class="material-icons prueba">settings</i>Cambiar contraseña</a></li>
 					<li><a class="teal-text" href="/loggOut"><i class="material-icons prueba">power_settings_new</i>Salir</a></li>
 				</ul>
 				<li><a href="">[[objsesion.nombre]] [[ objsesion.apellido ]]</a></li>
@@ -48,6 +48,7 @@
 			</div>
 		</div>
 	</nav>
+	
 
 	{% block contenido %}
 	{% endblock %}

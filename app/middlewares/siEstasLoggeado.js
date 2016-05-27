@@ -1,6 +1,6 @@
 var siEstasLoggeado = function(req, res, next){
-	if ( !req.session.usuario ){
-		res.redirect('/loggin')
+	if ( !req.session.objsesion ){
+		res.redirect('/login')
 		return
 	}
 	next()

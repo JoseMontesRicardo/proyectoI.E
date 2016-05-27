@@ -9,6 +9,7 @@ appAdmin.config(function($routeProvider){
 	}).otherwise({
 		redirectTo: '/'
 	})
+	
 	$routeProvider.when('/estudiantes', {
 		templateUrl: 'template/administrador/opciones/opciones-estudiante.html'
 	}).otherwise({
@@ -34,5 +35,6 @@ appAdmin.config(function($routeProvider){
 	}).otherwise({
 		redirectTo: '/'
 	})
+	
 })
 

@@ -7,9 +7,9 @@
 				<img class="contenedor-escudo__logotipo" src="img/escudo.png" alt="">
 			</figure>
 			<a href= "#/usuarios"class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">group</i>Usuarios</a>
-			<a href="#/estudiantes"class="opciones col s11 waves-effect waves-light btn"><i class="material-icons color right">child_care</i>Estudiantes</a>			
+			<a href="#/estudiantes"class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">child_care</i>Estudiantes</a>			
 			<a href="#/asignaturas" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons right">class</i>Asignaturas</a>
-			<a href="#/grados" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">bookmark</i>Grados</a>
+			<a href="#/grados" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">bookmark</i>Salones</a>
 			<a href="#/logros" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">grade</i>Logros</a>
 			<a href="#/horarios" class="opciones col s11 waves-effect waves-light btn"><i class="material-icons  right">today</i>Horario</a>
 		</div>
@@ -87,8 +87,10 @@
 		<!-- modal para editar horario -->
 		<div ng-include=" 'template/administrador/modales/modal-editar-horario.html' "></div>
 		<!-- modal para editar horario -->
-		
-
+		<div ng-include=" 'template/administrador/modales/modal-eliminar-plan.html' "></div>
+			<div ng-include=" 'template/administrador/modales/modal-eliminar-carga.html' "></div>
+			<div ng-include=" 'template/administrador/modales/modal-eliminar-grado.html' "></div>
+			<div ng-include=" 'template/administrador/modales/modal-eliminar-grupo.html' "></div>
 		<!-- todos los modales -->
 </div>
 {% endblock %}

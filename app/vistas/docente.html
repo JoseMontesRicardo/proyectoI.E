@@ -40,12 +40,12 @@
 					<li class="collection-item avatar" ng-click="mostrarVentana(usuario.nombre1,usuario.cedula)" ng-repeat=" usuario in acudientesConectados ">
 						<i class="material-icons online-ball">fiber_manual_record</i>
 						<a href="">
-							<img id="{{usuario.cedula}}" class="tooltipped circle" data-position="left" data-delay="10" data-tooltip="haga click para chatear con el profe!" src="img/keyner.jpg">
+							<img id="{{usuario.cedula}}" class="tooltipped circle" data-position="left" data-delay="10" data-tooltip="haga click para chatear con el profe!" src="img/perfil.png">
 							<script>
 								$('.tooltipped').tooltip();
 							</script>
 						</a>
-						<span><a href="">{{usuario.nombre1}}</a></span>
+						<span><a href="">{{usuario.nombre1+' '+usuario.apellido1+' '+usuario.apellido2}}</a></span>
 					</li>
 				</ul>
 			</div>

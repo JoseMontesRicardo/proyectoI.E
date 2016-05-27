@@ -34,6 +34,10 @@ body{
 	position: relative;
 }*/
 
+#content{
+	text-align: center;
+}
+
 .anclaje-mensaje__contenedor{
 	background-color: #fa3e3e;
 	border-radius: 4px;

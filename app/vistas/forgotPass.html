@@ -1,0 +1,22 @@
+{% extends './plantillas/plantilla-login.html' %}
+
+{% block form %}
+	<div ng-controller="sendMail" class="container contenedor-formulario-correo">
+		<form  method="post">
+			<h4>Reestablecer Contraseña</h4>
+			<p>ingrese el correo electronico</p>
+			
+			<div class="row">
+		        <div class="input-field col s12">
+		          <i class="material-icons prefix">contact_mail</i>
+		          <input ng-model="correo" id="icon_prefix" name="mail" type="email" class="validate">
+		          <label for="icon_prefix">Correo</label>
+		        </div>
+			</div>
+			<div class="row">
+				<input class="btn col s12" type="submit" value="enviar" ng-click="enviarCorreo()">
+				<!-- <button >enviar</button> -->
+			</div>
+		</form>
+	</div>
+{% endblock %}

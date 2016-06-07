@@ -67,10 +67,6 @@ moduleDocente.controller('controladorSalones', function($scope, socket, $http, $
 			}
 		})
 	}
-
-	$scope.mostrarModalContrasena = ()=>{
-		$('#modal-cambiar-contrasena').openModal()
-	}
 	$scope.verificarInforme = (ti, nombre, apellido)=>{
 		$scope.modalNombre 		= nombre 
 		$scope.modalApellido 	= apellido
@@ -174,6 +170,18 @@ moduleDocente.controller('docenteController', function($scope, socket, $http, $t
 		}
 	})
 
+	socket.on('passError', (data)=>{
+		if ( data.err ){
+			Materialize.toast('contraseña incorrecta!', 2000, 'error')
+			$scope.contrasenaNueva = undefined
+			$scope.contrasenaVieja = undefined
+		} else {
+			Materialize.toast('contraseña actualizada!', 2000, 'success')
+			$scope.contrasenaNueva = undefined
+			$scope.contrasenaVieja = undefined
+		}
+	})
+
 	socket.on('escribiendo', (data)=>{
 		cedulaAvisar = data.cedula
 		if ( $scope.cedulaChat === cedulaAvisar ){
@@ -189,6 +197,18 @@ moduleDocente.controller('docenteController', function($scope, socket, $http, $t
 		var height = wtf[0].scrollHeight;
 		wtf.scrollTop(height);
 	})
+
+	$scope.cambiarContrasena = ()=>{
+		if ( $scope.contrasenaNueva && $scope.contrasenaVieja ){
+			socket.emit('cambiarContrasena',{ vieja:$scope.contrasenaVieja , nueva: $scope.contrasenaNueva})
+		} else {
+			Materialize.toast('Hay campos vacios!!!',2000, 'error')
+		}
+	}
+
+	$scope.mostrarModalContrasena = ()=>{
+		$('#modal-cambiar-contrasena').openModal()
+	}
 
 	$scope.notificar = ()=>{
 		$('.anclaje-mensaje__contenedor').addClass('rotate')

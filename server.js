@@ -115,6 +115,8 @@ routerCargarLogros 				= require('./app/routers/r.cargarLogros.js')
 routerGetDatosEstudiante 		= require('./app/routers/r.getDatosEstudiante.js')
 routerGetDatosDocente			= require('./app/routers/r.getDatosDocente.js')
 routerGetDatosAcudiente			= require('./app/routers/r.getDatosAcudiente.js')
+routerSendMail 					= require('./app/routers/r.sendMail.js')
+
 
 //actvacion de los routers
 routerLogin(server)
@@ -170,7 +172,7 @@ routerCargarLogros(server, logros, db, carga_academica)
 routerGetDatosEstudiante(server, db)
 routerGetDatosDocente(server, db)
 routerGetDatosAcudiente(server,db)
-
+routerSendMail(server, usuarios)
 
 
 // librerias
@@ -187,6 +189,10 @@ verificarRol					= require('./app/socketsChat/verificarRol.js')
 enviarMensaje 					= require('./app/socketsChat/enviarMensaje.js')
 obtenerNoLeidos 				= require('./app/socketsChat/obtenerNoLeido.js')
 avisarEscritura 				= require('./app/socketsChat/avisarEscritura.js')
+
+server.get('/forgotPass', (req, res)=>{
+	res.render('forgotPass')
+})
 
 server.get('/loggOut', function(req, res){
 	req.session.destroy()
@@ -213,6 +219,25 @@ chat.on('connection', function(socket){
 	enviarMensaje(socket, chat, redisClient, mensajes)
 	obtenerNoLeido(socket, db)
 	avisarEscritura(socket, chat,redisClient)
+	socket.on('cambiarContrasena', (data)=>{
+		usuarios.find({ cedula: socket.handshake.session.objsesion.cedula, password: data.vieja}, (err, res)=>{
+			if ( err ){
+				throw (err)
+			} else {
+				if (res[0]){
+					res[0].save({
+						password: data.nueva
+					}, (err)=>{
+						if ( !err ){
+							socket.emit('passError', { err: false })
+						}
+					})
+				} else {
+					socket.emit('passError', { err: true })
+				}
+			}
+		})
+	})
 	socket.on('eventoLeido', (data)=>{
 		var cedulaEmisor 	= socket.handshake.session.objsesion.cedula,
 			cedulaReceptor 	= data.cedulaReceptor

@@ -12,6 +12,24 @@ var getLogrosController = (db)=>{
 				console.log(ti)
 			} 
 		})
+
+		var obtenerUltimosLogros = ()=>{
+			return new Promise( (resolve, reject)=>{
+				db.driver.execQuery(`select logro.nombre, informe_logro.nota, informe_logro.observacion from informe_logro
+				INNER JOIN logro 
+				ON ( logro.idlogro = informe_logro.logro_idlogro)
+				INNER JOIN informe
+				ON ( informe_logro.informe_idinforme = informe.idinforme)
+				where ( informe.estudiante_ti = '${ti}' ) order BY logro.idlogro ASC limit 10`, (err, result)=>{
+						if ( err ){
+							throw (err)
+						} else {
+							console.log(result)
+							resolve(result)
+						}
+					})
+			} )
+		}
 	
 		var obtenerLogro = (ti)=>{
 			return new Promise( (resolve, reject)=>{
@@ -30,11 +48,19 @@ var getLogrosController = (db)=>{
 					})
 			} )
 		}
-		obtenerLogro(ti)
-		.then( result => {
-			res.send( { logro : result } )
-		} )
-		.catch(err=>console.log(err))
+
+		if ( idasignatura && periodo ){
+			obtenerLogro(ti)
+			.then( result => {
+				res.send( { logro : result } )
+			} )
+			.catch(err=>console.log(err))
+		} else {
+			obtenerUltimosLogros()
+			.then( result => {
+				res.send( { logro : result } )
+			} )
+		}
 	}
 }
 

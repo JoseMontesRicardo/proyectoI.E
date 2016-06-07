@@ -96,6 +96,17 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 			wtf.scrollTop(height);
 		}
 	})
+	socket.on('passError', (data)=>{
+		if ( data.err ){
+			Materialize.toast('contraseña incorrecta!', 2000, 'error')
+			$scope.contrasenaNueva = undefined
+			$scope.contrasenaVieja = undefined
+		} else {
+			Materialize.toast('contraseña actualizada!', 2000, 'success')
+			$scope.contrasenaNueva = undefined
+			$scope.contrasenaVieja = undefined
+		}
+	})
 
 	socket.on('enviarMensaje', (data)=>{
 		var mensaje = data.mensaje
@@ -105,6 +116,18 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 		var height = wtf[0].scrollHeight;
 		wtf.scrollTop(height);
 	})
+
+	$scope.cambiarContrasena = ()=>{
+		if ( $scope.contrasenaNueva && $scope.contrasenaVieja ){
+			socket.emit('cambiarContrasena',{ vieja:$scope.contrasenaVieja , nueva: $scope.contrasenaNueva})
+		} else {
+			Materialize.toast('Hay campos vacios!!!',2000, 'error')
+		}
+	}
+
+	$scope.mostrarModalContrasena = ()=>{
+		$('#modal-cambiar-contrasena').openModal()
+	}
 
 	$scope.avisarEscritura = (cedulaReceptor)=>{
 		socket.emit('avisarEscritura', {cedulaReceptor: cedulaReceptor})
@@ -213,13 +236,13 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 			
 		})
 
-		// req = $http.post('/getLogro', { ti: ti })
-		// req.success(function(res){
-		// 	$scope.listaLogros = res.logro
-		// })
-		// req.error(function(err){
+		req = $http.post('/getLogro', { ti: ti })
+		req.success(function(res){
+			$scope.listaLogros = res.logro
+		})
+		req.error(function(err){
 			
-		// })
+		})
 
 
 		req = $http.post('/getDatos', { ti: ti })

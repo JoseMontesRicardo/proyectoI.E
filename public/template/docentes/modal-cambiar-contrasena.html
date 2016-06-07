@@ -5,7 +5,7 @@
 			<h5 class="teal-text">Digite su contraseña actual: </h5>
 			<div class="input-field col s6">
 				<i class="material-icons prefix">vpn_key</i>
-					<input type="text" class="validate">
+					<input ng-model="$parent.contrasenaVieja" type="password" class="validate">
 				<!-- <label for="icon_prefix">Código</label> -->
 			</div>
 
@@ -13,14 +13,14 @@
 			<h5 class="teal-text">Digite la nueva contraseña: </h5>
 			<div class="input-field col s6">
 				<i class="material-icons prefix">vpn_key</i>
-					<input type="text" class="validate">
+					<input ng-model="$parent.contrasenaNueva" type="password" class="validate">
 				<!-- <label for="icon_prefix">Nombre</label> -->
 			</div>
 		</div>
 		<h6>Recuerde que su clave de acceso es de uso personal, se le recomienda cambiarla periódicamente para mayor seguridad.</h6>		
 	</div>
 	<div class="modal-footer">
-		<a class="btn waves-effect waves-default" >Cambiar</a>
+		<a class="btn waves-effect waves-default" ng-click="cambiarContrasena()" >Cambiar</a>
 	</div>	
 </div>	
 <script>

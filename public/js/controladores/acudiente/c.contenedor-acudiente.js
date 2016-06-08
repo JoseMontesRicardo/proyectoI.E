@@ -236,13 +236,13 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 			
 		})
 
-		req = $http.post('/getLogro', { ti: ti })
-		req.success(function(res){
-			$scope.listaLogros = res.logro
-		})
-		req.error(function(err){
+		// req = $http.post('/getLogro', { ti: ti })
+		// req.success(function(res){
+		// 	$scope.listaLogros = res.logro
+		// })
+		// req.error(function(err){
 			
-		})
+		// })
 
 
 		req = $http.post('/getDatos', { ti: ti })
@@ -298,8 +298,16 @@ acudienteControlador.controller('controladorAcudientes', function($scope, $http,
 
 		})
 	}
-	
-
+		
+	$scope.cargarLogros2 = function(){
+		idasignatura =  $routeParams.asignatura
+			reqAjax = $http.post('/getLogro', {idasignatura : $routeParams.asignatura})
+			.success(function(res){
+				$scope.listaLogros = res.logro
+			})
+			.error(function(err){
+			})
+	}
 	//Cargar logros 
 	$scope.cargarLogros = function(ti){
 		periodo = $scope.selectPeriodo
